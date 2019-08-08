@@ -1,0 +1,28 @@
+*.retry
+.DS_Store
+*.swp
+*.pyc
+.cache
+__pycache__
+**/.idea/
+.idea/infrastructure.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/vcs.xml
+roles/elasticsearch/files/files.iml
+.gradle/
+
+#  Local .terraform directories
+**/.terraform/*
+*/.terraform.state.d/*
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+*.tgz
+lambda.zip
+.vscode
+DevOps-IL-WebInfra-Developer-Env/
+na_*.db
+venv/
