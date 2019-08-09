@@ -7,7 +7,7 @@ resource "aws_elb" "elb" {
     lb_protocol       = "TCP"
   }
   subnets         = data.aws_subnet_ids.subnets.ids
-  security_groups = [aws_security_group.servers-sg.id]
+  security_groups = [aws_security_group.servers-sg.id, data.aws_security_group.default-sg.id]
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment" {
