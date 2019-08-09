@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-module "nginx" {
+module "spot-elb" {
   source           = "../../modules/spot-elb"
   desired-capacity = "1"
   max-size         = "1"
@@ -22,5 +22,5 @@ EOF
 }
 
 output "url" {
-  value = module.nginx.url
+  value = module.spot-elb.url
 }
