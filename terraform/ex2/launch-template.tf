@@ -12,14 +12,10 @@ resource "aws_launch_template" "my-lc" {
   name = "my-lc"
 
   image_id = "ami-0b898040803850657"
+  key_name = "DevOps"
 
-  instance_market_options {
-    market_type = "spot"
-  }
-  key_name      = "DevOps"
-  instance_type = ""
-
-  vpc_security_group_ids = ["${aws_security_group.servers-sg.id}"]
-  user_data              = "${base64encode(local.user_data)}"
-  depends_on             = ["aws_security_group.servers-sg"]
+  vpc_security_group_ids = [
+  aws_security_group.servers-sg.id]
+  user_data  = base64encode(local.user_data)
+  depends_on = [aws_security_group.servers-sg]
 }
