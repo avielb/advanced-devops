@@ -8,8 +8,8 @@ docker run -itd -p 80:80 nginx
 EOF
 }
 
-resource "aws_launch_template" "my-lc" {
-  name = "my-lc"
+resource "aws_launch_template" "my-lt" {
+  name = "my-lt"
 
   image_id = "ami-0b898040803850657"
   key_name = "DevOps"

@@ -1,5 +1,5 @@
-resource "aws_launch_template" "my-lc" {
-  name = "${var.project-name}-lc"
+resource "aws_launch_template" "lt" {
+  name = "${var.project-name}-lt"
 
   image_id = "ami-0b898040803850657"
   key_name = "DevOps"
