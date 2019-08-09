@@ -16,10 +16,10 @@ resource "aws_launch_template" "my-lc" {
   instance_market_options {
     market_type = "spot"
   }
-  key_name = "DevOps"
+  key_name      = "DevOps"
   instance_type = ""
 
   vpc_security_group_ids = ["${aws_security_group.servers-sg.id}"]
-  user_data = "${base64encode(local.user_data)}"
-  depends_on = ["aws_security_group.servers-sg"]
+  user_data              = "${base64encode(local.user_data)}"
+  depends_on             = ["aws_security_group.servers-sg"]
 }
