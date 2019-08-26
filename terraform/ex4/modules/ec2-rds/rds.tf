@@ -4,5 +4,6 @@ provider "aws" {
 
 module "rds" {
   source           = "../../modules/rds"
-  cluster_name     = "cool-apps"
+  cluster_name     = "${var.cluster_name}"
 }
+
