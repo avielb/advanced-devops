@@ -8,5 +8,5 @@ resource "aws_db_instance" "default" {
   username             = "rds_admin"
   password             = "superpassword"
   parameter_group_name = "default.mysql5.7"
-  security_group_names = [aws_security_group.servers-sg.id, data.aws_security_group.default-sg.id]
+  security_group_names = [aws_security_group.rds-sg.id, data.aws_security_group.default-sg.id]
 }

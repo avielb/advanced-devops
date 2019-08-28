@@ -1,5 +1,5 @@
 output "database_sg" {
-  value = aws_security_group.servers-sg.id
+  value = aws_security_group.rds-sg.id
 }
 
 output "database_url" {
