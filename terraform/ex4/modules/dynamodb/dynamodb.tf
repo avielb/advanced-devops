@@ -5,5 +5,6 @@ resource "aws_dynamodb_table" "table" {
     name = var.hash_key
     type = var.hash_key_type
   }
+  billing_mode = var.billing_mode
 }
 

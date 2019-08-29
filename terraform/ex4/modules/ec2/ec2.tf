@@ -16,11 +16,12 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "web" {
   ami = data.aws_ami.ubuntu.id
+  subnet_id = data.aws_subnet.subnet.id
   instance_type = "t2.micro"
   security_groups = [
-    aws_security_group.servers-sg.id,
-    data.aws_security_group.default-sg.id]
+    aws_security_group.servers-sg.id, data.aws_security_group.default-sg.id]
   tags = {
-    Name = var.cluster_name
+    Name = var.cluster-name
   }
+  user_data = var.user_data
 }
