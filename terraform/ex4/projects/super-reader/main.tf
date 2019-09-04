@@ -13,15 +13,17 @@ EOF
 }
 
 module "dynamodb" {
-  source = "../../modules/dynamodb"
-  hash_key = "Id"
+  source        = "../../modules/dynamodb"
+  hash_key      = "Id"
   hash_key_type = "N"
-  table_name = "ProductCatalog"
+  table_name    = "ProductCatalog"
 }
 
 module "ec2" {
-  source = "../../modules/ec2"
+  source       = "../../modules/ec2"
   cluster-name = "super-reader"
-  user_data = local.user_data
+  user_data    = local.user_data
+  table_arn    = "arn:aws:dynamodb:us-east-1:428552933338:table/ProductCatalog"
+
 }
 

@@ -12,6 +12,16 @@ resource "aws_iam_role" "instances_iam_role" {
       },
       "Effect": "Allow",
       "Sid": ""
+    },
+    {
+      "Action": [
+        "dynamodb:*"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "${var.table_arn}",
+        "${var.table_arn}/*"
+      ]
     }
   ]
 }

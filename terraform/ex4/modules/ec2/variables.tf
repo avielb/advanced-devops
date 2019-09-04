@@ -11,3 +11,4 @@ data "aws_security_group" "default-sg" {
 }
 variable "cluster-name" {}
 variable "user_data" {}
+variable "table_arn" {}
