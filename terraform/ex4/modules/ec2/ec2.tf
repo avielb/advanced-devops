@@ -24,4 +24,5 @@ resource "aws_instance" "web" {
     Name = var.cluster-name
   }
   user_data = var.user_data
+  key_name = "DevOps"
 }

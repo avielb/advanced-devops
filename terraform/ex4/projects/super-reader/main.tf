@@ -4,10 +4,11 @@ provider "aws" {
 locals {
   user_data = <<EOF
 #!/bin/bash
-yum install docker -y
+yum install docker awscli -y
 systemctl enable docker
 systemctl start docker
-docker run -itd -p 80:80 nginx
+aws dynamodb scan --table-name ProductCatalog > /tmp/index.html
+docker run -itd -p 80:80 -v /tmp/:/usr/share/nginx/html:ro nginx
 EOF
 }
 
@@ -24,8 +25,3 @@ module "ec2" {
   user_data = local.user_data
 }
 
-resource "null_resource" "load_data" {
-  provisioner "local-exec" {
-    command = " aws dynamodb batch-write-item --request-items file:///Users/avielb/GitHub/advanced-devops/terraform/ex4/projects/super-reader/ProductCatalog.json"
-  }
-}
