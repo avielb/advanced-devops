@@ -1,5 +1,5 @@
 resource "aws_security_group" "servers-sg" {
-  name   = "${var.cluster-name}-sg"
+  name   = "${var.cluster_name}-sg"
   vpc_id = data.aws_vpc.default_vpc.id
 }
 
