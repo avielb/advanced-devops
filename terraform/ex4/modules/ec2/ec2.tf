@@ -5,10 +5,11 @@ resource "aws_instance" "web" {
   subnet_id     = data.aws_subnet.subnet.id
   instance_type = "t2.micro"
   security_groups = [
-  aws_security_group.servers-sg.id, data.aws_security_group.default-sg.id]
+  aws_security_group.servers-sg.id, data.aws_security_group.default_sg.id]
   tags = {
-    Name = var.cluster-name
+    Name = var.cluster_name
   }
-  user_data = var.user_data
-  key_name  = "DevOps"
+  user_data            = var.user_data
+  key_name             = "DevOps"
+  iam_instance_profile = aws_iam_instance_profile.instances_iam_instance_profile.id
 }
