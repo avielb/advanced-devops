@@ -7,6 +7,10 @@ output "kibana_url" {
 }
 
 module "es" {
-  source = "../../modules/elasticsearch"
+  source       = "../../modules/elasticsearch"
   cluster_name = "logz"
 }
+
+#
+# upload data:
+# curl -XPOST elasticsearch_domain_endpoint/_bulk --data-binary @movies.json -H 'Content-Type: application/json'
