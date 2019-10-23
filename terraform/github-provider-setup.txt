@@ -1,0 +1,8 @@
+Create together a github organization:
+1. Go to https://github.com/organizations/plan
+2. Choose the free plan
+3. Name your org with your username  + “-org” , for example “avielb-org”
+Create access Token at: https://github.com/settings/tokens
+1. Click “Generate new token”
+2. Call it “access-token”
+3. And save
