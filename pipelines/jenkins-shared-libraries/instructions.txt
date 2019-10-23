@@ -1,0 +1,7 @@
+1. Go to Jenkins -> Manage Jenkins -> Configure System
+2. Scroll down to "Global Pipeline Libraries"
+3. Under Name write: jenkins-shared-library
+4. Under "Default version" write: master
+5. Under "Source Code Management" choose Modern SCM and choose Git
+6. Under "Project Repository" write down: https://github.com/avielb/jenkins-shared-library.git
+7. Create a new pipeline and add the content of "shared-library-pipeline.groovy" to it.
