@@ -1,6 +1,5 @@
 resource "github_repository" "example" {
-  name        = "example"
-  description = "My awesome codebase"
-
-  private = true
+  name        = var.github_repo_name
+  description = var.github_repo_description
+  private     = var.github_repo_is_private
 }
