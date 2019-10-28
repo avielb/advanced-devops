@@ -1,0 +1,3 @@
+terraform init
+terraform apply --auto-approve -var="name=avielb"
+terraform destroy
