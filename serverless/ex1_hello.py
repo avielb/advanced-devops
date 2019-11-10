@@ -8,7 +8,6 @@ def lambda_handler(event, context):
     elif event["httpMethod"] == "POST":
         rc = 202
         result = "Saving the car"
-    # TODO implement
     return {
         'statusCode': rc,
         'body': result
