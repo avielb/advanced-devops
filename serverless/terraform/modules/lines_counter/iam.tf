@@ -44,6 +44,16 @@ resource "aws_iam_role_policy" "allow_s3_read" {
       "Resource": [
         "${aws_s3_bucket.bucket.arn}/*"
       ]
+    },
+    {
+      "Sid": "DynamoDBPutItem",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:PutItem"
+      ],
+      "Resource": [
+        "${aws_dynamodb_table.table.arn}/*"
+      ]
     }
   ]
 }

@@ -4,8 +4,8 @@ provider "aws" {
 
 module "lines_counter" {
   source        = "../../modules/lines_counter"
-  hash_key      = "Id"
-  hash_key_type = "N"
+  hash_key      = "ID"
+  hash_key_type = "S"
   table_name    = "LinesCounts"
   bucket_name   = "avielb-files-bucket"
   filename      = "lines_counter.zip"
