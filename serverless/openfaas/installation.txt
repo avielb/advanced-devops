@@ -1,14 +1,16 @@
 minikube start
 git clone https://github.com/openfaas/faas-netes
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
-# generate a random password
-PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)
 kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-user=admin \
---from-literal=basic-auth-password="$PASSWORD"
+--from-literal=basic-auth-password="123456"
 cd faas-netes && \
 kubectl apply -f ./yaml
 kubectl port-forward svc/gateway -n openfaas 31112:8080 &
 export OPENFAAS_URL=http://127.0.0.1:31112
 
-echo -n $PASSWORD | faas-cli login --password-stdin
+echo -n 123456 | faas-cli login --password-stdin
+
+# For more information visit here:
+# https://docs.openfaas.com/deployment/kubernetes
+#
