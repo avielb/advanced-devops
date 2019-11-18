@@ -10,6 +10,6 @@ module "lines_counter" {
   bucket_name   = "avielb-files-bucket"
   filename      = "lines_counter.zip"
   function_name = "LinesCounter"
-  handler       = "LinesCounter.lambda_handler"
+  handler       = "lines_counter.lambda_handler"
   runtime       = "python3.6"
 }

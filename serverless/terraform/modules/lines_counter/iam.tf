@@ -49,11 +49,32 @@ resource "aws_iam_role_policy" "allow_s3_read" {
       "Sid": "DynamoDBPutItem",
       "Effect": "Allow",
       "Action": [
-        "dynamodb:PutItem"
+        "dynamodb:BatchGetItem",
+        "dynamodb:ConditionCheckItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetItem",
+        "dynamodb:Scan",
+        "dynamodb:Query",
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:UpdateTimeToLive"
       ],
       "Resource": [
-        "${aws_dynamodb_table.table.arn}/*"
+        "${aws_dynamodb_table.table.arn}"
       ]
+    },
+    {
+        "Sid": "ListAndDescribe",
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:List*",
+            "dynamodb:DescribeReservedCapacity*",
+            "dynamodb:DescribeLimits",
+            "dynamodb:DescribeTimeToLive"
+        ],
+        "Resource": "*"
     }
   ]
 }
