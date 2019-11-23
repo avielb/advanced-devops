@@ -1,0 +1,5 @@
+# make sure docker is up and running
+faas-cli new --lang python3 hello-world
+faas-cli build -f ./hello-world.yml
+faas-cli push -f ./hello-world.yml
+faas-cli deploy -f ./hello-world.yml [--update]
