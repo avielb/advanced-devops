@@ -6,8 +6,8 @@ kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-password="123456"
 cd faas-netes && \
 kubectl apply -f ./yaml
-kubectl port-forward svc/gateway -n openfaas 31112:8080 &
-export OPENFAAS_URL=http://127.0.0.1:31112
+kubectl port-forward svc/gateway -n openfaas 8080:8080 &
+export OPENFAAS_URL=http://127.0.0.1:8080
 
 echo -n 123456 | faas-cli login --password-stdin
 
