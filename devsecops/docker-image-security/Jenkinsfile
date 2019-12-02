@@ -11,7 +11,12 @@ pipeline {
 				git "https://github.com/avielb/python-project.git"
 			}
 		}
-		stage ("lint dockerfile") {
+		stage("build"){
+			steps {
+				sh "docker build -t avielb/python-project:latest ."
+			}
+		}
+		stage ("lint") {
 			agent {
 				docker {
 					image 'hadolint/hadolint:latest-debian'
@@ -22,21 +27,20 @@ pipeline {
 				sh 'cd /workspace && hadolint Dockerfile'
 				//    sh 'cd /workspace && hadolint Dockerfile.Bad'
 
+			} //
+		}
+		stage("scan") {
+			steps {
+				withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
+					sh "npm install -g snyk"
+					sh "snyk test --docker avielb/python-project:latest"
+				}
+
 			}
 		}
-		stage("build"){
-			steps {
-				sh "docker build -t avielb/python-project:latest ."
-			}
-		}
-		stage("scan"){
-			steps {
-				echo "snyk testing here"
-			}
-		}
-		stage("scan"){
-			steps {
-				echo "docker push avielb/python-project:latest"
+		stage("push") {
+			steps{
+				sh "docker push avielb/python-project:latest"
 			}
 		}
 	}
