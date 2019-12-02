@@ -1,0 +1,43 @@
+pipeline {
+	agent any
+	stages {
+		stage("clean"){
+			steps{
+				cleanWs()
+			}
+		}
+		stage("clone"){
+			steps{
+				git "https://github.com/avielb/python-project.git"
+			}
+		}
+		stage ("lint dockerfile") {
+			agent {
+				docker {
+					image 'hadolint/hadolint:latest-debian'
+					args " -v ${WORKSPACE}:/workspace"
+				}
+			}
+			steps {
+				sh 'cd /workspace && hadolint Dockerfile'
+				//    sh 'cd /workspace && hadolint Dockerfile.Bad'
+
+			}
+		}
+		stage("build"){
+			steps {
+				sh "docker build -t avielb/python-project:latest ."
+			}
+		}
+		stage("scan"){
+			steps {
+				echo "snyk testing here"
+			}
+		}
+		stage("scan"){
+			steps {
+				echo "docker push avielb/python-project:latest"
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
 docker build -t avielb/python-project .
 docker run avielb/python-project:latest
 
-Next steps is to add a pipeline that checks out avielb/python-project lint, build and scans it.
+# change jenkinsfile to use shared libraries
