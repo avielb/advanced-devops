@@ -9,5 +9,6 @@ resource "aws_dynamodb_table" "table" {
   server_side_encryption {
     enabled = true
   }
+  depends_on = [aws_kms_key.key]
 }
 
