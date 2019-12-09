@@ -23,6 +23,5 @@ roles/elasticsearch/files/files.iml
 *.tgz
 lambda.zip
 .vscode
-DevOps-IL-WebInfra-Developer-Env/
 na_*.db
 venv/
