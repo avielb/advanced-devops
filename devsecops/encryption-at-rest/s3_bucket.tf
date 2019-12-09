@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "${var.name}-encrypted-bucket"
+  bucket = "${var.name}-1encrypted-bucket"
 
   server_side_encryption_configuration {
     rule {
@@ -9,4 +9,5 @@ resource "aws_s3_bucket" "mybucket" {
       }
     }
   }
+  depends_on = [aws_kms_key.key]
 }
