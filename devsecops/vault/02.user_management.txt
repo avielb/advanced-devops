@@ -1,0 +1,19 @@
+# enable username password auth
+vault auth enable userpass
+
+# create read only policy db-ro
+vault policy write db-ro ./read_db_creds.hcl
+
+vault write auth/userpass/users/avielb \
+    password=P4ss \
+    policies=db-ro
+
+# connect to vault
+export VAULT_ADDR='http://localhost:8200'
+vault login -method=userpass username=avielb
+# type in user's password.
+
+# revoke policy from user
+vault write auth/userpass/users/avielb \
+    password=P4ss \
+    policies=""

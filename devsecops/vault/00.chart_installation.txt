@@ -1,0 +1,19 @@
+# Clone the chart repo
+git clone https://github.com/hashicorp/vault-helm.git
+cd vault-helm
+
+# Checkout a tagged version
+git checkout v0.2.1
+
+# Run Helm
+helm install --dry-run ./
+helm install ./
+
+# Connect vault
+kubectl exec -it vault-0 sh
+
+# Init cluster, save output to side note
+vault operator init
+
+# port-forward connections the following way
+kubectl port-forward vault-0 8200:8200
