@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "asg" {
     }
     launch_template {
       launch_template_specification {
-        launch_template_id = aws_launch_template.my-lc.id
+        launch_template_id = aws_launch_template.my-lt.id
       }
       override {
         instance_type = "t2.nano"
