@@ -1,5 +1,6 @@
 provider "github" {
   organization = "Aviel-Org"
+  token        = "123456789"
 }
 
 provider "gitlab" {}

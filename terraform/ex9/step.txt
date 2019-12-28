@@ -1,0 +1,10 @@
+1. create new github organization:
+   go to: https://github.com/account/organizations/new?coupon=&plan=team_free
+   call it "{yourname}-org", enter your e-mail, click next and Complete Setup
+2. create new token
+   go to: https://github.com/settings/tokens
+   click "generate new token", choose a name for the token and check of all the checkboxes
+3. terraform init
+4. terraform plan
+5. terraform apply
+6. terraform destroy
