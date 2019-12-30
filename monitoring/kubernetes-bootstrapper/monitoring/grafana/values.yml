@@ -1,0 +1,14 @@
+sidecar:
+  image: xuxinkun/k8s-sidecar:0.0.7
+  imagePullPolicy: IfNotPresent
+#  resources:
+##   limits:
+##     cpu: 100m
+##     memory: 100Mi
+##   requests:
+##     cpu: 50m
+##     memory: 50Mi
+  datasources:
+    enabled: true
+    label: grafana_datasource
+    
