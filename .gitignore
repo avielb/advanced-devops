@@ -25,3 +25,4 @@ lambda.zip
 .vscode
 na_*.db
 venv/
+serverless/terraform/projects/lines_counter/lines_counter.zip
