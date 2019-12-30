@@ -1,17 +1,8 @@
 1. kubectl apply -f monitoring/namespace.yml
-2. helm install stable/prometheus \
-    --namespace monitoring \
-    --name prometheus
+2. helm install prometheus stable/prometheus --namespace monitoring
 3. kubectl apply -f monitoring/grafana/config.yml
-4. helm install stable/grafana \
-    -f monitoring/grafana/values.yml \
-    --namespace monitoring \
-    --name grafana
-5. kubectl get secret \
-    --namespace monitoring \
-    grafana \
-    -o jsonpath="{.data.admin-password}" \
-    | base64 --decode ; echo
+4. helm install grafana --namespace monitoring stable/grafana -f monitoring/grafana/values.yml
+5. kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 6. export POD_NAME=$(kubectl get pods --namespace monitoring -l "app=grafana,release=grafana" -o jsonpath="{.items[0].metadata.name}")
 	 or set the name of grafana pod.
 7. kubectl --namespace monitoring port-forward $POD_NAME 3000
