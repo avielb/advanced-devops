@@ -1,3 +1,38 @@
 server:
   global:
-    scrape_interval: 15s	
+    scrape_interval: 15s
+alertmanagerFiles:
+  alertmanager.yml:
+    global: {}
+    receivers:
+      - name: default-receiver
+      - name: email-me
+        email_configs:
+        - to: <mail@gmail.com>
+          from: <mail@gmail.com>
+          smarthost: smtp.gmail.com:587
+          auth_username: "<mail@gmail.com>"
+          auth_identity: "<mail@gmail.com>"
+          auth_password: "<auth_token>" # Create in: https://myaccount.google.com/security
+    route:
+      group_wait: 10s
+      group_interval: 5m
+      receiver: email-me
+      repeat_interval: 3h	
+serverFiles:
+  prometheus.yml:
+    rule_files:
+      - /etc/config/recording_rules.yml
+      - /etc/config/alerting_rules.yml
+  alerting_rules.yml: 
+    groups:
+      - name: Instances
+        rules:
+          - alert: OutOfMemory
+            expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 99
+            for: 2m
+            labels:
+              severity: warning
+            annotations:
+              summary: "Out of memory (instance {{ $labels.instance }})"
+              description: "Node memory is filling up (< 99% left)\n  VALUE = {{ $value }}\n  LABELS: {{ $labels }}"
