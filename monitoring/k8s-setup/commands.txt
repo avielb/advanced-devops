@@ -8,3 +8,4 @@
 7. kubectl --namespace monitoring port-forward $POD_NAME 3000
 8. kubectl port-forward prometheus-node-exporter-8z6fd -n monitoring 9100:9100
 9. kubectl port-forward prometheus-server-775957f748-wfnrs -n monitoring 9090:9090
+10: Sending metrics to pushgateway: echo "some_metric 52" | curl --data-binary @- http://localhost:9091/metrics/job/some_job
