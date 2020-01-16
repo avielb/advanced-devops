@@ -1,4 +1,5 @@
 resource "aws_db_instance" "default" {
+  identifier             = "bookstack"
   allocated_storage      = 5
   storage_type           = "gp2"
   engine                 = "mysql"
