@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "rds" {
-  source           = "../../modules/rds"
-  cluster_name     = "${var.cluster_name}"
+  source       = "../../modules/rds"
+  cluster_name = var.cluster_name
 }
 
