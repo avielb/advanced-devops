@@ -1,3 +1,5 @@
+persistence:
+  enabled: true
 sidecar:
   image: xuxinkun/k8s-sidecar:0.0.7
   imagePullPolicy: IfNotPresent

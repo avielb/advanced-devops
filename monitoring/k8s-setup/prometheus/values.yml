@@ -1,6 +1,7 @@
 server:
   global:
-    scrape_interval: 15s
+    scrape_interval: 5s
+    scrape_timeout: 3s
 alertmanagerFiles:
   alertmanager.yml:
     global: {}

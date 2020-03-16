@@ -1,5 +1,5 @@
 variable "image_id" {
-  type = string
+  type = "string"
 }
 
 variable "availability_zone_names" {
@@ -12,10 +12,6 @@ resource "aws_instance" "example" {
   ami           = var.image_id
 }
 
-variable "image_id" {
-  type        = string
-  description = "The id of the machine image (AMI) to use for the server."
-}
 
 ```bash
 terraform apply -var="image_id=ami-abc123"
