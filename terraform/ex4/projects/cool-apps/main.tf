@@ -3,6 +3,6 @@ provider "aws" {
 }
 
 module "ec2-rds" {
-  source           = "../../modules/ec2-rds"
-  cluster_name     = "cool-apps"
+  source       = "../../modules/ec2-rds"
+  cluster_name = "coolapps"
 }

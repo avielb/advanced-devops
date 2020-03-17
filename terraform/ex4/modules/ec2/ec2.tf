@@ -10,6 +10,5 @@ resource "aws_instance" "web" {
     Name = var.cluster_name
   }
   user_data            = var.user_data
-  key_name             = "DevOps"
   iam_instance_profile = aws_iam_instance_profile.instances_iam_instance_profile.id
 }
