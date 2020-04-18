@@ -19,6 +19,7 @@ locals {
 //  acl = local.bucket_acl
 //  source = "tip_calc/index.html"
 //  content_type = "text/html"
+//  etag = filemd5("tip_calc/index.html")
 //}
 //
 //resource "aws_s3_bucket_object" "stylecss" {
@@ -26,6 +27,7 @@ locals {
 //  key = "style.css"
 //  acl = local.bucket_acl
 //  source = "tip_calc/style.css"
+//  etag = filemd5("tip_calc/style.css")
 //}
 //
 //resource "aws_s3_bucket_object" "tipcalculatorjs" {
@@ -33,4 +35,5 @@ locals {
 //  key = "tipcalculator.js"
 //  acl = local.bucket_acl
 //  source = "tip_calc/tipcalculator.js"
+//  etag = filemd5("tip_calc/tipcalculator.js")
 //}
