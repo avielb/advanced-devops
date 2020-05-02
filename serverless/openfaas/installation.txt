@@ -16,6 +16,12 @@ export OPENFAAS_URL=http://127.0.0.1:8080
 
 echo -n 123456 | faas-cli login --password-stdin
 
+# Install faas-cli
+Go to: https://github.com/openfaas/faas-cli/releases
+download the app according to your operating system (Windows, OSX or Linux)
+Windows users, move it under: C:\windows\System32
+Linux and OSX, move it under /usr/local/bin
+
 # For more information visit here:
 # https://docs.openfaas.com/deployment/kubernetes
 #
