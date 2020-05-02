@@ -13,14 +13,26 @@ locals {
   bucket_acl  = "public-read"
 }
 
-//resource "aws_s3_bucket_object" "indexhtml" {
-//  bucket = local.bucket_name
-//  key = "index.html"
-//  acl = local.bucket_acl
-//  source = "tip_calc/index.html"
-//  content_type = "text/html"
-//  etag = filemd5("tip_calc/index.html")
-//}
+terraform {
+  backend "s3" {
+    bucket = "avielbuskila-terraform-states"
+    key    = "terraform-state-1"
+    region = "us-east-1"
+
+  }
+}
+resource "aws_s3_bucket_object" "indexhtml" {
+  bucket       = local.bucket_name
+  key          = "index.html"
+  acl          = local.bucket_acl
+  source       = "tip_calc/index.html"
+  content_type = "text/html"
+  etag         = filemd5("tip_calc/index.html")
+}
+data "terraform_remote_state" aa {
+  backend = "s3"
+
+}
 //
 //resource "aws_s3_bucket_object" "stylecss" {
 //  bucket = local.bucket_name

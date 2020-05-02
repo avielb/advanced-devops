@@ -79,5 +79,5 @@ resource "aws_iam_role_policy" "allow_s3_read" {
   ]
 }
 EOF
-  role   = "${aws_iam_role.iam_for_lambda.id}"
+  role   = aws_iam_role.iam_for_lambda.id
 }

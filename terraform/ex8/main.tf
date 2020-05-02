@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
   ami           = "ami-0b898040803850657"
   instance_type = "t2.micro"
   subnet_id     = data.aws_subnet.use1c_subnet.id
-  key_name      = "DevOps"
+
 }
 
 resource "aws_s3_bucket" "monitor-bucket" {

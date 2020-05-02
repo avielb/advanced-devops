@@ -1,10 +1,15 @@
+# Start Kubernetes
 minikube start
+# Clone faas-netes
 git clone https://github.com/openfaas/faas-netes
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
+# FaaS auth
 kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-user=admin \
 --from-literal=basic-auth-password="123456"
-cd faas-netes && \
+
+# Deploy OpenFaaS
+cd faas-netes
 kubectl apply -f ./yaml
 kubectl port-forward svc/gateway -n openfaas 8080:8080 &
 export OPENFAAS_URL=http://127.0.0.1:8080
