@@ -1,0 +1,5 @@
+git:
+  url: git@github.com:avielb/test-flux
+  path: releases
+helm:
+  versions: v3

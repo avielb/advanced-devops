@@ -1,0 +1,18 @@
+Change to myapp.yaml
+--------------------
+1. kubectl describe helmrelease myapp
+2. go to test-flux repo -> releases -> edit myapp.yaml
+3. add under "env:" DEVOPS: EXPERTS
+4. now go and check your cluster with: kubectl get pods --watch
+
+New docker image release
+------------------------
+1. I am running:
+2. docker build -t avielb/test-flux:master-9999 .
+3. docker push avielb/test-flux:master-9999
+4. now go and check your cluster with: kubectl get pods --watch
+5. check new commits to your git repository
+
+New helm chart version
+----------------------
+I am going to add a new environment variable to the chart

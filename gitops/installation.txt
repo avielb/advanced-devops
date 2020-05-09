@@ -1,0 +1,12 @@
+1. minikube start
+2. fork git repository: https://github.com/avielb/test-flux
+3. edit values-flux.yaml with your github username
+4. helm upgrade -i flux fluxcd/flux -f values-flux.yaml
+5. helm upgrade -i helm-operator fluxcd/helm-operator -f values-helm-operator.yaml
+5. run: kubectl logs -f deploy/flux , look for "identity.pub" and copy the content "ssh-rsa ..."
+6. copy output
+7. go to https://github.com/<username>/test-flux/settings/keys
+    a. click "add deploy key"
+    b. in title write "flux"
+    c. paste contents from step 6
+8. kubectl get helmrelease
