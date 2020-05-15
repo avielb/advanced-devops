@@ -1,0 +1,17 @@
+repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com
+
+releases:
+  - name: airflow
+    namespace: default
+    chart: stable/airflow
+    values:
+      - redis:
+          redisHost: "redis-master"
+
+# Install redis before installing airflow
+helmfiles:
+  - path: ./05-redis-dep.yaml
+    values:
+      - password: "ssss1"

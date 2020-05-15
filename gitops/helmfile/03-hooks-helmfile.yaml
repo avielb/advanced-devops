@@ -1,0 +1,23 @@
+repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
+    username: ""
+    password: ""
+releases:
+- name: redis
+  namespace: default
+  chart: stable/redis
+  hooks:
+    - events: ["prepare", "cleanup"]
+      showlogs: true
+      command: "echo"
+      args: ["{{`{{.Environment.Name}}`}}", "{{`{{.Release.Name}}`}}", "{{`{{.HelmfileCommand}}`}}"]
+  values:
+    - redis-values.yaml
+    - cluster:
+        slaveCount: 1
+
+
+

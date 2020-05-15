@@ -1,0 +1,18 @@
+repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com
+
+releases:
+- name: "{{.Environment.Name}}-redis"
+  namespace: default
+  chart: stable/redis
+  values:
+    - password: "{{ .Values.password }}"
+environments:
+  default:
+    values:
+      - password: "easyPass"
+  prod:
+    values:
+      - ./redis-values.yaml
+      - myVar: Bla123
