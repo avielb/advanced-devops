@@ -12,7 +12,6 @@ resource "aws_launch_template" "my-lt" {
   name = "my-lt"
 
   image_id = "ami-0b898040803850657"
-  key_name = "DevOps"
 
   vpc_security_group_ids = [
     aws_security_group.servers-sg.id,

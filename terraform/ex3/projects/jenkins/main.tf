@@ -9,6 +9,7 @@ module "spot-elb" {
   min-size         = "0"
   project-name     = "jenkins"
   user-data        = local.user-data
+
 }
 
 locals {

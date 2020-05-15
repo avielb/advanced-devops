@@ -2,7 +2,7 @@
 helm install mysql stable/mysql
 
 # extract password
-kubectl get secret mysql -o jsonpath="{.data.mysql-root-password[*]}"
+kubectl get secret mysql -o jsonpath="{.data.mysql-root-password}"
 echo SjREcGZyTlFCZw== | base64 --decode
 
 # connect to vault
