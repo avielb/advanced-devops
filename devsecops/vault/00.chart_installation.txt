@@ -3,11 +3,11 @@ git clone https://github.com/hashicorp/vault-helm.git
 cd vault-helm
 
 # Checkout a tagged version
-git checkout v0.2.1
+git checkout v0.5.0
 
 # Run Helm
 helm install --dry-run ./
-helm install ./
+helm install vault ./
 
 # Connect vault
 kubectl exec -it vault-0 sh
