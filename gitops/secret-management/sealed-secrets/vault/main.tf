@@ -25,7 +25,7 @@ data template_file "secret" {
   }
 }
 
-output secret1 {
+output secret {
   value = data.template_file.secret.rendered
   # to apply to current cluster this can be run:
   # terraform output secret | kubectl apply -f -
@@ -38,16 +38,15 @@ locals {
   ])
 }
 
-output secret {
+output dynamic_secret {
   value = <<EOF
 apiVersion: v1
 data:
   ${indent(2, local.secret_contents)}
 kind: Secret
 metadata:
-  name: credentials
+  name: ${replace(data.vault_generic_secret.creds.path, "/", "-")}
   namespace: default
 type: Opaque
-
 EOF
 }
