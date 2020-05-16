@@ -1,6 +1,6 @@
 provider "vault" {
   address = "http://127.0.0.1:8200/"
-  # token = "s.123123123123"
+  token   = "s.QQj6ECNObRiRTSE89mFM5Hrx"
 }
 data "vault_generic_secret" "creds" {
   path = "kv/credentials"
@@ -25,9 +25,29 @@ data template_file "secret" {
   }
 }
 
-output secret {
+output secret1 {
   value = data.template_file.secret.rendered
   # to apply to current cluster this can be run:
   # terraform output secret | kubectl apply -f -
 }
 
+locals {
+  secret_contents = join("\n", [
+    for test in keys(data.vault_generic_secret.creds.data) :
+    join(": ", [test, base64encode(data.vault_generic_secret.creds.data[test])])
+  ])
+}
+
+output secret {
+  value = <<EOF
+apiVersion: v1
+data:
+  ${indent(2, local.secret_contents)}
+kind: Secret
+metadata:
+  name: credentials
+  namespace: default
+type: Opaque
+
+EOF
+}
