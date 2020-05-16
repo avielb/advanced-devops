@@ -1,15 +1,15 @@
-helmfile  --file 00-helmfile.yaml apply
-helmfile  --file 00-helmfile.yaml destroy
-export SUPERSET=YES
-helmfile  --file 01-env-vars.yaml apply
-helmfile  --file 01-env-vars.yaml destroy
-unset SUPERSET
-export SLAVE_COUNT=2
-helmfile --file 02-helmfile-envvars-values.yaml apply
-unset SLAVE_COUNT
-helmfile --file 02-helmfile-envvars-values.yaml --interactive apply
-helmfile --file 03-hooks-helmfile.yaml --interactive apply
-helmfile --file 04-environments-helmfile.yaml apply
-helmfile --file 04-environments-helmfile.yaml --environment prod apply
-helmfile --file 04-environments-helmfile.yaml --environment prod apply
-helmfile --file 05-nested-helmfile.yaml --interactive apply
+1. helmfile  --file 00-helmfile.yaml apply
+2. helmfile  --file 00-helmfile.yaml destroy
+3. export SUPERSET=YES
+4. helmfile  --file 01-env-vars.yaml apply
+5. helmfile  --file 01-env-vars.yaml destroy
+6. unset SUPERSET
+7. export SLAVE_COUNT=2
+8. helmfile --file 02-helmfile-envvars-values.yaml apply
+9. unset SLAVE_COUNT
+10. helmfile --file 02-helmfile-envvars-values.yaml --interactive apply
+11. helmfile --file 03-hooks-helmfile.yaml --interactive apply
+12. helmfile --file 04-environments-helmfile.yaml apply
+13. helmfile --file 04-environments-helmfile.yaml --environment prod apply
+14. helmfile --file 04-environments-helmfile.yaml --environment prod apply
+15. helmfile --file 05-nested-helmfile.yaml --interactive apply
