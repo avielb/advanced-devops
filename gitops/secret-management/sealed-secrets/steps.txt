@@ -1,0 +1,17 @@
+# create a secret
+kubectl create secret generic secret-name --from-literal=foo=bar
+
+# generate a sealed secret contents using the cluster to encrypt the secret
+kubectl create secret generic secret-name --dry-run --from-literal=foo=bar -o yaml | kubeseal  --controller-name=my-release-sealed-secrets  --controller-namespace=default  --format yaml > mysealedsecret.yaml
+
+# show sealed secret
+cat mysealedsecret.yaml
+
+# apply sealed secret to the cluster
+kubectl apply -f mysealedsecret.yaml
+
+
+# If you would rather not need access to the cluster to generate the sealed secret you can run
+kubectl create secret generic secret-name --dry-run --from-literal=foo=baz -o yaml | kubeseal  --controller-name=my-release-sealed-secrets  --controller-namespace=default  --format yaml --cert mycert.pem > mysealedsecret.yaml
+
+# anyway now mysealedsecret.yaml can be stored on any git repo without any fear it will be exposed.
