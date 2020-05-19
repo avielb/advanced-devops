@@ -6,7 +6,8 @@ kubectl get secret mysql -o jsonpath="{.data.mysql-root-password}"
 echo SjREcGZyTlFCZw== | base64 --decode
 
 # connect to vault
-export VAULT_ADDR='http://localhost:8200'
+export VAULT_ADDR='http://127.0.0.1:8200'
+echo s.gS7cATHHyMOHd5MZ1fhS9UoH | vault login -
 vault login
 # type in your vault root token
 
@@ -19,7 +20,7 @@ vault write database/config/my-mysql-database \
     connection_url="{{username}}:{{password}}@tcp(mysql:3306)/" \
     allowed_roles="my-role" \
     username="root" \
-    password="J4DpfrNQBg"
+    password="qXkMdNI1tq"
 
 # define a read only user which be default lasts for 1 hour.
 vault write database/roles/my-role \
@@ -28,6 +29,8 @@ vault write database/roles/my-role \
     default_ttl="1h" \
     max_ttl="24h"
 
+# get username and pass
+vault read database/creds/my-role
 # test connection.
 mysql -u v-root-my-role-HoS9LwwU1Xe0M1v9w -pA1a-xcuoNHheelmh3vur -P 3306 -h 127.0.0.1
 
