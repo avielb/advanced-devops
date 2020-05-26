@@ -1,5 +1,5 @@
 git:
-  url: git@github.com:avielb/test-flux
+  url: git@github.com:davidegov/flux
   path: releases
 helm:
   versions: v3
