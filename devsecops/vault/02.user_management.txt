@@ -10,7 +10,7 @@ vault write auth/userpass/users/avielb \
 
 # connect to vault
 export VAULT_ADDR='http://localhost:8200'
-vault login -method=userpass username=avielb
+echo P4ss | vault login -method=userpass username=avielb -
 # type in user's password.
 
 # revoke policy from user
