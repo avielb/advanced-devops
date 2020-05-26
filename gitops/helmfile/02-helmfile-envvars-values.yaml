@@ -13,4 +13,3 @@ releases:
     - redis-values.yaml
     - cluster:
         slaveCount: {{ env "SLAVE_COUNT" | default "1" }}
-    - password: {{ .Values.password }}

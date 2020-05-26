@@ -1,6 +1,6 @@
 1. helmfile  --file 00-helmfile.yaml apply
 2. helmfile  --file 00-helmfile.yaml destroy
-3. export SUPERSET=YES
+3. export SUPERSET=YES # set SUPERSET YES
 4. helmfile  --file 01-env-vars.yaml apply
 5. helmfile  --file 01-env-vars.yaml destroy
 6. unset SUPERSET
