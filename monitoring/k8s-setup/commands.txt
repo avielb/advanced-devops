@@ -1,5 +1,5 @@
 1. kubectl apply -f monitoring/namespace.yml
-2. helm install prometheus stable/prometheus --namespace monitoring
+2. helm upgrade -i prometheus stable/prometheus --namespace monitoring -f prometheus/values.yml
 3. kubectl apply -f monitoring/grafana/config.yml
 4. helm install grafana --namespace monitoring stable/grafana
 5. kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
