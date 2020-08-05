@@ -1,10 +1,10 @@
 1. kubectl apply -f monitoring/namespace.yml
 2. helm install prometheus stable/prometheus --namespace monitoring
 3. kubectl apply -f monitoring/grafana/config.yml
-4. helm install grafana --namespace monitoring stable/grafana -f monitoring/grafana/values.yml
+4. helm install grafana --namespace monitoring stable/grafana
 5. kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 6. kubectl -n monitoring port-forward svc/grafana 3000:80 &
 7. kubectl -n monitoring port-forward svc/prometheus-node-exporter 9100:9100 &
 8. kubectl -n monitoring port-forward svc/prometheus-pushgateway 9091:9091 &
 9. kubectl -n monitoring port-forward svc/prometheus-server 9090:80 &
-10: Sending metrics to pushgateway: echo "some_metric 52" | curl --data-binary @- http://localhost:9091/metrics/job/some_job
+10: Sending metrics to pushgateway: echo "some_metric 52" | curl --data-binary @- http://localhost:9091/metrics/job/some_job/a/b
