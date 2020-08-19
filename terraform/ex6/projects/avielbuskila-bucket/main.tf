@@ -29,10 +29,7 @@ resource "aws_s3_bucket_object" "indexhtml" {
   content_type = "text/html"
   etag         = filemd5("tip_calc/index.html")
 }
-data "terraform_remote_state" aa {
-  backend = "s3"
 
-}
 //
 //resource "aws_s3_bucket_object" "stylecss" {
 //  bucket = local.bucket_name
