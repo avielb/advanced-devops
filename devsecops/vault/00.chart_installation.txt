@@ -6,8 +6,8 @@ cd vault-helm
 git checkout v0.5.0
 
 # Run Helm
-helm install --dry-run ./
-helm install vault ./
+helm install vault --dry-run ./
+helm install vault vault ./
 
 # Connect vault
 kubectl exec -it vault-0 sh
