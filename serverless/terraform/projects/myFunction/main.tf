@@ -9,7 +9,7 @@ module "lam_api" {
   authorization = "NONE"
   filename      = "ex1.zip"
   function_name = "myFunction"
-  runtime       = "python3.6"
+  runtime       = "python3.8"
   handler       = "ex1_hello.lambda_handler"
   http_method   = "ANY"
 

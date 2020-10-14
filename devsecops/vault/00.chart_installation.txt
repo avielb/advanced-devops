@@ -17,3 +17,6 @@ vault operator init
 
 # port-forward connections the following way
 kubectl port-forward vault-0 8200:8200
+
+# install vault CLI from
+https://www.vaultproject.io/downloads
