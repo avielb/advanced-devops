@@ -1,6 +1,6 @@
 provider "vault" {
   address = "http://127.0.0.1:8200/"
-  token   = "s.8cCSziYTMNXd9RYpFXxmkRTK"
+  token   = "s.lkCWAQg14yV8OJY52hOK2DMt"
 }
 data "vault_generic_secret" "creds" {
   path = "kv/credentials"
