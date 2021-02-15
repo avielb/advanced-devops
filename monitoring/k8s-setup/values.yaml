@@ -1,0 +1,3 @@
+postgresqlDatabase: test
+metrics:
+  enabled: true
