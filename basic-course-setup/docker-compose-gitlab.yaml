@@ -1,0 +1,26 @@
+web:
+  image: 'gitlab/gitlab-ee:latest'
+  container_name: 'gitlab-howtoforge-tutorial'
+  restart: always
+  hostname: 'gitlab.example.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://192.168.95.5:8080'
+      gitlab_rails['smtp_enable'] = true
+      gitlab_rails['smtp_address'] = "smtp.gmail.com"
+      gitlab_rails['smtp_port'] = 587
+      gitlab_rails['smtp_user_name'] = "user@gmail.com"
+      gitlab_rails['smtp_password'] = "app-password"
+      gitlab_rails['smtp_domain'] = "smtp.gmail.com"
+      gitlab_rails['smtp_authentication'] = "login"
+      gitlab_rails['smtp_enable_starttls_auto'] = true
+      gitlab_rails['smtp_tls'] = false
+      gitlab_rails['smtp_openssl_verify_mode'] = 'peer'
+      # Add any other gitlab.rb configuration here, each on its own line
+  ports:
+    - '8080:8080'
+    - '8443:443'
+  volumes:
+    - '/srv/gitlab/config:/etc/gitlab'
+    - '/srv/gitlab/logs:/var/log/gitlab'
+    - '/srv/gitlab/data:/var/opt/gitlab'
