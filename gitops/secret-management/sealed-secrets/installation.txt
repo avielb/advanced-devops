@@ -2,4 +2,5 @@
 2. download the latest version according to the OS you are using: Linux, Mac or Windows
 3. Rename to kubeseal
 4. Windows users copy it to C:/WINDOWS/System32/ , Linux and Mac: /usr/local/bin/
-5. Run: helm install my-release stable/sealed-secrets
+5. helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
+6. helm install --namespace kube-system --name my-release sealed-secrets/sealed-secrets

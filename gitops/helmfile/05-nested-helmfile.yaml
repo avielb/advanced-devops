@@ -1,11 +1,10 @@
 repositories:
-  - name: stable
-    url: https://kubernetes-charts.storage.googleapis.com
-
+  - name: bitnami
+    url: https://charts.bitnami.com/bitnami
 releases:
   - name: airflow
     namespace: default
-    chart: stable/airflow
+    chart: bitnami/airflow
     values:
       - redis:
           redisHost: "redis-master"

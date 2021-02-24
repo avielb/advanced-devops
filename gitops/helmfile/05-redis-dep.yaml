@@ -1,6 +1,4 @@
 repositories:
-  - name: stable
-    url: https://kubernetes-charts.storage.googleapis.com
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
     username: ""
@@ -8,7 +6,7 @@ repositories:
 releases:
 - name: redis
   namespace: default
-  chart: stable/redis
+  chart: bitnami/redis
   values:
     - redis-values.yaml
     - cluster:

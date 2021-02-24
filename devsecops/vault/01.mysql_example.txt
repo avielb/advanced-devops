@@ -1,5 +1,5 @@
 # deploy small mysql database to minikube
-helm install mysql stable/mysql
+helm install mysql bitnami/mysql
 
 # extract password
 kubectl get secret mysql -o jsonpath="{.data.mysql-root-password}"

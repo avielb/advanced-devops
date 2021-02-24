@@ -1,11 +1,11 @@
 repositories:
-  - name: stable
-    url: https://kubernetes-charts.storage.googleapis.com
+  - name: cloudposse-incubator
+    url: https://charts.cloudposse.com/incubator/
 
 releases:
 {{ if eq (env "SUPERSET") "YES" }}
 - name: superset
   namespace: default
-  chart: stable/superset
+  chart: cloudposse-incubator/superset
 {{ end }}
 

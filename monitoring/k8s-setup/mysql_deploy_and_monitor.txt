@@ -1,4 +1,4 @@
-1. helm install wordpress-db stable/mysql --set mysqlRootPassword=secretpassword
-2. helm install mysql-exporter stable/prometheus-mysql-exporter -f mysql-exporter/values.yaml -n monitoring
+1. helm install wordpress-db bitnami/mysql --set mysqlRootPassword=secretpassword
+2. helm install mysql-exporter prometheus-community/prometheus-mysql-exporter -f mysql-exporter/values.yaml -n monitoring
 3. Open grafana with: kubectl -n monitoring port-forward svc/grafana 3000:80
 4. Go to Dashboards -> Import -> enter dashboard number: 7362
