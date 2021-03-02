@@ -29,6 +29,14 @@ serverFiles:
     groups:
       - name: Instances
         rules:
+          - alert: OutOfCPU
+            expr: rate(node_cpu_seconds_total{mode="idle"}[5m]) * 100 < 95
+            for: 2m
+            labels:
+              severity: warning
+            annotations:
+              summary: "Too much CPU usage"
+              description: "Application wants to sleep"
           - alert: OutOfMemory
             expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 99
             for: 2m
