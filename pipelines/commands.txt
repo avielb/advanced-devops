@@ -1,0 +1,1 @@
+helm install jenkins ./jenkins --set master.serviceType=NodePort
