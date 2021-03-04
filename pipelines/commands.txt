@@ -1,1 +1,2 @@
-helm install jenkins ./jenkins --set master.serviceType=NodePort
+helm repo add jenkins https://charts.jenkins.io
+helm install jenkins jenkins/jenkins --set controller.serviceType=NodePort
