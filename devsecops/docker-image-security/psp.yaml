@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world
+spec:
+  containers:
+    - name: friendly-container
+      image: "alpine:3.4"
+      command: ["/bin/echo", "hello", "world"]
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsUser: 999
+        capabilities:
+          drop:
+            - ALL

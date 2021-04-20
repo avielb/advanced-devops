@@ -1,4 +1,4 @@
-minikube start  --cpus 4 --memory 8192
+minikube start  --cpus 4 --memory 8192 --vm-driver=virtualbox
 kubectl apply -f hipster-shop.yaml
 # wait for everything to come up
 kubectl port-forward svc/frontend 8081:80
