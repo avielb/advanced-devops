@@ -9,7 +9,8 @@ spec:
       command: ["/bin/echo", "hello", "world"]
       securityContext:
         readOnlyRootFilesystem: true
-        runAsUser: 999
+        runAsUser: 1001
+        runAsGroup: 3000
         capabilities:
           drop:
             - ALL
