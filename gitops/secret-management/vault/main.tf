@@ -2,8 +2,12 @@ provider "vault" {
   address = "http://127.0.0.1:8200/"
   token   = "s.lkCWAQg14yV8OJY52hOK2DMt"
 }
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
 data "vault_generic_secret" "creds" {
-  path = "kv/credentials"
+  path = "kv/my-secrets"
 }
 
 resource "kubernetes_secret" "example" {
@@ -17,7 +21,7 @@ resource "kubernetes_secret" "example" {
   }
 }
 
-data template_file "secret" {
+data "template_file" "secret" {
   template = file("secret.yaml")
   vars = {
     username = base64encode(data.vault_generic_secret.creds.data["username"])
@@ -25,7 +29,7 @@ data template_file "secret" {
   }
 }
 
-output secret {
+output "secret" {
   value = data.template_file.secret.rendered
   # to apply to current cluster this can be run:
   # terraform output secret | kubectl apply -f -
@@ -38,7 +42,7 @@ locals {
   ])
 }
 
-output dynamic_secret {
+output "dynamic_secret" {
   value = <<EOF
 apiVersion: v1
 data:

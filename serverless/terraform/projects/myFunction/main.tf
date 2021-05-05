@@ -1,5 +1,7 @@
 provider "aws" {
-  region = "us-east-1"
+  region     = "us-east-1"
+  access_key = "AKIA6GSVZTR5HBD5OFWP"
+  secret_key = "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"
 }
 
 module "lam_api" {
@@ -12,5 +14,4 @@ module "lam_api" {
   runtime       = "python3.8"
   handler       = "ex1_hello.lambda_handler"
   http_method   = "ANY"
-
 }
