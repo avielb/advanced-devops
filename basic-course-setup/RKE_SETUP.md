@@ -9,6 +9,6 @@ usermod -aG docker ec2-user
 ```
 
 3. Enable all traffic for the EC2 instance
-4. sed -ie 's/IP_ADDRESS/'${EC2_IP_ADDRESS}'/' cluster.yml
+4. `sed -ie 's/IP_ADDRESS/'${EC2_IP_ADDRESS}'/' cluster.yml`
 5. rke up 
 6. export KUBECONFIG=$(pwd)/kube_config_cluster.yml
