@@ -1,4 +1,9 @@
 # RKE on EC2 
+Install RKE on your workstation as described in the following link: 
+
+https://rancher.com/docs/rke/latest/en/installation/#download-the-rke-binary
+
+
 1. Setup an EC2 `t2.medium` with Amazon Linux AMI
 2. Connect as root and install docker and configure it as follows:
 ```sh
