@@ -1,7 +1,8 @@
 # RKE on EC2 
-1. Setup an EC2 `t2.medium` 
+1. Setup an EC2 `t2.medium` with Amazon Linux AMI
 2. Connect as root and install docker and configure it as follows:
 ```sh
+sudo su - 
 yum install -y docker 
 systemctl enable docker 
 systemctl start docker 

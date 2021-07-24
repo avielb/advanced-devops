@@ -1,5 +1,5 @@
 nodes:
-  - address: 3.90.3.118
+  - address: IP_ADDRESS
     user: ec2-user
     role:
       - etcd
