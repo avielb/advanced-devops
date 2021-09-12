@@ -4,7 +4,7 @@ Install RKE on your workstation as described in the following link:
 https://rancher.com/docs/rke/latest/en/installation/#download-the-rke-binary
 
 
-1. Setup an EC2 `t2.medium` with Amazon Linux AMI
+1. Setup an EC2 `t2.medium` with Amazon Linux AMI, allow inbound traffic from anywhere / your IP
 2. Connect as root and install docker configured it as follows:
 ```sh
 sudo su - 
@@ -12,6 +12,8 @@ yum install -y docker
 systemctl enable docker 
 systemctl start docker 
 usermod -aG docker ec2-user 
+exit
+exit
 ```
 
 3. Enable all traffic for inbound traffic to the EC2 instance
