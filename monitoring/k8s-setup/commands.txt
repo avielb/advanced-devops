@@ -7,7 +7,7 @@
 7. helm install grafana --namespace monitoring grafana/grafana --set rbac.pspEnabled=false
 8. kubectl get secret --namespace monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 9. kubectl -n monitoring port-forward svc/grafana 3000:80 &
-10. kubectl -n monitoring port-forward svc/prometheus-node-exporter 9100:9100 &
+10. kubectl -n monitoring port-forward svc/prometheus-prometheus-node-exporter 9100:9100 &
 11. kubectl -n monitoring port-forward svc/prometheus-pushgateway 9091:9091 &
 12. kubectl -n monitoring port-forward svc/prometheus-server 9090:80 &
 13: Sending metrics to pushgateway: echo "some_metric 52" | curl --data-binary @- http://localhost:9091/metrics/job/some_job/a/b
