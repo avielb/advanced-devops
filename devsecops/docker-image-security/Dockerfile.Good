@@ -1,4 +1,4 @@
-FROM python:3.7.5-alpine3.10
+FROM python:3.7.5-alpine3.10  {from}
 RUN adduser -D pythonuser && mkdir /app && chown -R pythonuser /app
 COPY requirements.txt /app
 WORKDIR /app
