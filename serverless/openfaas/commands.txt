@@ -1,0 +1,1 @@
+curl 'http://127.0.0.1:8080/function/word-counter.openfaas-fn'   --data-raw 'aviel buskila devops 123 lajsndf al ldkndn'
