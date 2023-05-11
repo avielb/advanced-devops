@@ -20,7 +20,7 @@ vault write database/config/my-mysql-database \
     connection_url="{{username}}:{{password}}@tcp(mysql:3306)/" \
     allowed_roles="my-role" \
     username="root" \
-    password="qXkMdNI1tq"
+    password="jJCXzUzRbB"
 
 # define a read only user which be default lasts for 1 hour.
 vault write database/roles/my-role \
@@ -34,5 +34,6 @@ vault read database/creds/my-role
 
 #
 # test connection.
+kubectl exec -it mysql-0 -- bash
 mysql -u v-root-my-role-HoS9LwwU1Xe0M1v9w -pA1a-xcuoNHheelmh3vur -P 3306 -h 127.0.0.1
 

@@ -1,0 +1,30 @@
+vault secrets enable -path=aws aws
+vault write aws/config/root \
+    access_key=<Your AWS Access key ID> \
+    secret_key=<Your AWS Secret access key> \
+    region=us-east-1
+
+vault write aws/roles/my-role \
+        credential_type=iam_user \
+
+        policy_document=-<<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1426528957000",
+      "Effect": "Allow",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
+EOF
+
+vault read aws/creds/my-role
+vault list /sys/leases/lookup/aws/creds/my-role/
+vault lease revoke -prefix aws/creds/my-role/HXUYXeF6JhzXL5jB5UGRuwgu

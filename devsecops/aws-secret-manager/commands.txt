@@ -1,0 +1,2 @@
+aws secretsmanager get-secret-value --secret-id apikey --query '["SecretString"]' --output text
+aws secretsmanager get-secret-value --secret-id userpass --query '[SecretString]' --output text | jq -r '.password'
