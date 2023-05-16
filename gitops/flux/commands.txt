@@ -1,0 +1,25 @@
+1. download and install flux CLI tool: https://fluxcd.io/flux/installation/
+2. deploy flux demo to minikube cluster with this command:
+```bash
+export GITHUB_TOKEN=<your-token>
+export GITHUB_USER=<your-username>
+flux bootstrap github \
+  --owner=$GITHUB_USER \
+  --repository=fleet-infra \
+  --branch=main \
+  --path=./clusters/my-cluster \
+  --personal
+```
+3. clone the example repo created:
+```bash
+git clone https://github.com/$GITHUB_USER/fleet-infra
+cd fleet-infra/clusters/my-cluster
+```
+4. add the the following files to your git repository
+podinfo-helmrelease.yaml
+podinfo-repo.yaml
+
+5. run:
+git add .
+git commit -am "add podinfo"
+git push
