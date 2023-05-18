@@ -1,6 +1,6 @@
 provider "vault" {
   address = "http://127.0.0.1:8200/"
-  token   = "s.lkCWAQg14yV8OJY52hOK2DMt"
+  token   = "hvs.Ow35A6AqihyxUu0El8KTkJ4u"
 }
 provider "kubernetes" {
   config_path = "~/.kube/config"
@@ -43,7 +43,8 @@ locals {
 }
 
 output "dynamic_secret" {
-  value = <<EOF
+  sensitive = true
+  value     = <<EOF
 apiVersion: v1
 data:
   ${indent(2, local.secret_contents)}
