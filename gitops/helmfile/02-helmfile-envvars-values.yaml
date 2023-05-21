@@ -9,5 +9,5 @@ releases:
   chart: bitnami/redis
   values:
     - redis-values.yaml
-    - cluster:
-        slaveCount: {{ env "SLAVE_COUNT" | default "1" }}
+    - replica:
+        replicaCount: {{ env "SLAVE_COUNT" | default "1" }}

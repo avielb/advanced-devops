@@ -20,38 +20,38 @@ resource "kubernetes_secret" "example" {
     password = data.vault_generic_secret.creds.data["password"]
   }
 }
-
-data "template_file" "secret" {
-  template = file("secret.yaml")
-  vars = {
-    username = base64encode(data.vault_generic_secret.creds.data["username"])
-    password = base64encode(data.vault_generic_secret.creds.data["password"])
-  }
-}
-
-output "secret" {
-  value = data.template_file.secret.rendered
-  # to apply to current cluster this can be run:
-  # terraform output secret | kubectl apply -f -
-}
-
-locals {
-  secret_contents = join("\n", [
-    for test in keys(data.vault_generic_secret.creds.data) :
-    join(": ", [test, base64encode(data.vault_generic_secret.creds.data[test])])
-  ])
-}
-
-output "dynamic_secret" {
-  sensitive = true
-  value     = <<EOF
-apiVersion: v1
-data:
-  ${indent(2, local.secret_contents)}
-kind: Secret
-metadata:
-  name: ${replace(data.vault_generic_secret.creds.path, "/", "-")}
-  namespace: default
-type: Opaque
-EOF
-}
+#
+#data "template_file" "secret" {
+#  template = file("secret.yaml")
+#  vars = {
+#    username = base64encode(data.vault_generic_secret.creds.data["username"])
+#    password = base64encode(data.vault_generic_secret.creds.data["password"])
+#  }
+#}
+#
+#output "secret" {
+#  value = data.template_file.secret.rendered
+#  # to apply to current cluster this can be run:
+#  # terraform output secret | kubectl apply -f -
+#}
+#
+#locals {
+#  secret_contents = join("\n", [
+#    for test in keys(data.vault_generic_secret.creds.data) :
+#    join(": ", [test, base64encode(data.vault_generic_secret.creds.data[test])])
+#  ])
+#}
+#
+#output "dynamic_secret" {
+#  sensitive = true
+#  value     = <<EOF
+#apiVersion: v1
+#data:
+#  ${indent(2, local.secret_contents)}
+#kind: Secret
+#metadata:
+#  name: ${replace(data.vault_generic_secret.creds.path, "/", "-")}
+#  namespace: default
+#type: Opaque
+#EOF
+#}
