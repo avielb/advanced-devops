@@ -5,7 +5,7 @@ services:
     privileged: true
     user: root
     ports:
-      - 8083:8080
+      - 80:8080
       - 50000:50000
     container_name: my-jenkins-3
     volumes:
