@@ -30,3 +30,7 @@ services:
 networks:
   my-network:
     driver: bridge
+
+
+
+docker tag test avielb/0306repo:v0.1
