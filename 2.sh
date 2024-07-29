@@ -34,3 +34,5 @@ networks:
 
 
 docker tag test avielb/0306repo:v0.1
+docker login
+docker push avielb/0306repo:v0.1
