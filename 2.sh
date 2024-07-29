@@ -10,3 +10,23 @@ docker network create my-network
 docker run -d --name nginx1 --network my-network nginx:alpine
 docker run -d --name nginx2 --network my-network nginx:alpine
 docker network inspect  my-network
+
+
+version: '3'
+
+services:
+  nginx1:
+    image: nginx:alpine
+    container_name: nginx1
+    networks:
+      - my-network
+
+  nginx2:
+    image: nginx:alpine
+    container_name: nginx2
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
