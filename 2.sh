@@ -15,15 +15,15 @@ docker network inspect  my-network
 version: '3'
 
 services:
-  nginx1:
+  nginx55:
     image: nginx:alpine
-    container_name: nginx1
+    container_name: nginx55
     networks:
       - my-network
 
-  nginx2:
+  nginx56:
     image: nginx:alpine
-    container_name: nginx2
+    container_name: nginx56
     networks:
       - my-network
 
