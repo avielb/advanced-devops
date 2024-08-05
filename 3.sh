@@ -13,3 +13,5 @@ kubectl get pods -l app=hello-node
 kubectl describe svc hello-node
 kubectl delete svc hello-node
 kubectl expose deploy/hello-node --type NodePort --port 80
+kubectl delete svc hello-node
+kubectl expose deploy/hello-node --type LoadBalancer --port 80
