@@ -11,3 +11,5 @@ kubectl expose deploy/hello-node --type ClusterIP --port 80
 kubectl scale deploy/hello-node --replicas=1
 kubectl get pods -l app=hello-node
 kubectl describe svc hello-node
+kubectl delete svc hello-node
+kubectl expose deploy/hello-node --type NodePort --port 80
