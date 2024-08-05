@@ -15,3 +15,4 @@ kubectl delete svc hello-node
 kubectl expose deploy/hello-node --type NodePort --port 80
 kubectl delete svc hello-node
 kubectl expose deploy/hello-node --type LoadBalancer --port 80
+https://github.com/avielb/k8s-demo
