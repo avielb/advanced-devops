@@ -5,3 +5,4 @@ kubectl logs redis
 kubectl create deployment hello-node --image=nginx:alpine --replicas=5
 kubectl scale deploy/hello-node --replicas=10
 kubectl set image deploy/hello-node nginx=nginx:16-alpine
+kubectl rollout undo deployment/hello-node --to-revision=1
