@@ -1,2 +1,2 @@
 kubectl get pods 
-kubectl config current-context docker-desktop
+kubectl run nginx --image=nginx:1.15.12-alpine
