@@ -8,3 +8,6 @@ kubectl set image deploy/hello-node nginx=nginx:16-alpine
 kubectl rollout undo deployment/hello-node --to-revision=1
 kubectl set image deploy/hello-node nginx=nginx:1.16-alpine
 kubectl expose deploy/hello-node --type ClusterIP --port 80
+kubectl scale deploy/hello-node --replicas=1
+kubectl get pods -l app=hello-node
+kubectl describe svc hello-node
