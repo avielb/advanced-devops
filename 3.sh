@@ -1,1 +1,1 @@
-3.
+kubectl get pods 
