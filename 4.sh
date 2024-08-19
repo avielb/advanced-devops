@@ -11,3 +11,4 @@ kubectl delete -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volum
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/config-map.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/game-config.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/pod-with-config-map.yaml
+helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx
