@@ -6,3 +6,4 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volume
 kubectl exec -it task-pv-pod -- bash
 cd /usr/share/nginx/html/
 echo hello from experts > index.html
+kubectl port-forward svc/svc-to-pvc 9090:80
