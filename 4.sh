@@ -14,3 +14,13 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volume
 helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx
 https://artifacthub.io/packages/helm/bitnami/nginx
 helm upgrade -i my-release oci://registry-1.docker.io/bitnamicharts/nginx --set replicaCount=4
+# Default values for mychart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: avielb/0306-first-repo
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
