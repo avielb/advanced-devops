@@ -10,3 +10,4 @@ kubectl port-forward svc/svc-to-pvc 9090:80
 kubectl delete -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/pod-with-pvc.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/config-map.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/game-config.yaml
+kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/pod-with-config-map.yaml
