@@ -3,3 +3,4 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volume
 kubectl get pvc
 kubectl get pv
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/pod-with-pvc.yaml
+kubectl exec -it task-pv-pod -- bash
