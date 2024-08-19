@@ -12,3 +12,4 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volume
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/game-config.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/master/volumes/pod-with-config-map.yaml
 helm install my-release oci://registry-1.docker.io/bitnamicharts/nginx
+https://artifacthub.io/packages/helm/bitnami/nginx
