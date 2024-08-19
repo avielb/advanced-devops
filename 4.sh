@@ -24,3 +24,7 @@ image:
   repository: avielb/0306-first-repo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
+
+
+helm package ./mychart
+helm template moshe ./
