@@ -21,3 +21,5 @@ ansible-playbook -i hosts common.yml
 https://galaxy.ansible.com/ui/standalone/roles/
 ansible-galaxy role install geerlingguy.nginx
 cd /root/.ansible/roles/geerlingguy.nginx
+cd /ansible-demo
+ansible-playbook -i hosts galaxy-role.yml
