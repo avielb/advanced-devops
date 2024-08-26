@@ -15,6 +15,8 @@ docker rm -vf node1
 docker run --name node1 -d avielb/ansible-demo:amd64 
 docker rm -vf node2
 docker run --name node2 -d avielb/ansible-demo:amd64 
+ssh-copy-id node1
+ssh-copy-id node2
 screencast
 
 git clone https://github.com/avielb/ansible-demo
