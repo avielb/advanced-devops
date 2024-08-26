@@ -12,3 +12,4 @@ ansible servers -m ping -i hosts
 ansible servers -m shell -a "echo hello world" -i hosts
 ansible servers -m apt -a "name=nginx state=present" -i hosts
 ansible-playbook vars.yml -i hosts
+ansible-playbook vars.yml -i hosts --tags=tag1
