@@ -7,5 +7,5 @@ ssh-copy-id node2
 screencast
 
 
-
+ansible servers -m ping -i hosts
 
