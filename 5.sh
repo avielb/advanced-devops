@@ -10,3 +10,4 @@ screencast
 ansible servers -m ping -i hosts
 
 ansible servers -m shell -a "echo hello world" -i hosts
+ansible servers -m apt -a "name=nginx state=present" -i hosts
