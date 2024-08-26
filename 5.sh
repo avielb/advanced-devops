@@ -19,3 +19,4 @@ ansible-playbook vars.yml -i hosts --tags=tag1
 ansible-playbook demo.yml -i hosts
 ansible-playbook -i hosts common.yml
 https://galaxy.ansible.com/ui/standalone/roles/
+ansible-galaxy role install geerlingguy.nginx
