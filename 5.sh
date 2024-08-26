@@ -5,9 +5,13 @@ rm -rf /usr/lib/python3.12/EXTERNALLY-MANAGED
 pip install ansible
 
 # for mac run
+docker rm -vf node1 
 docker run --name node1 -d avielb/ansible-demo:arm64 
+docker rm -vf node2
 docker run --name node2 -d avielb/ansible-demo:arm64 
 
 # for windows run
+docker rm -vf node1 
 docker run --name node1 -d avielb/ansible-demo:amd64 
+docker rm -vf node2
 docker run --name node2 -d avielb/ansible-demo:amd64 
