@@ -17,3 +17,4 @@ ansible servers -m apt -a "name=nginx state=present" -i hosts
 ansible-playbook vars.yml -i hosts
 ansible-playbook vars.yml -i hosts --tags=tag1
 ansible-playbook demo.yml -i hosts
+ansible-playbook -i hosts common.yml
