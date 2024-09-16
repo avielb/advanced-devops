@@ -24,3 +24,25 @@ terraform {
 include {
   path = find_in_parent_folders()
 }
+
+# dev/terragrunt.hcl
+inputs= {
+  env = "development"
+}
+
+generate "provider" {
+  path      = "provider.tf"
+  if_exists = "overwrite"
+  contents = <<EOF
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+
+}
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
+
+EOF
+}
