@@ -7,3 +7,4 @@ provider "helm" {
     config_path = "~/.kube/config"
   }
 }
+https://registry.terraform.io/modules/terraform-iaac/nginx-controller/helm/latest?tab=inputs
