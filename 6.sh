@@ -14,3 +14,13 @@ module "app" {
   env = "prod"
   controller_kind = "Deployment" # use this
 }
+
+
+# dev/app-tg/terragrunt.hcl
+terraform {
+  source = "../../modules/app"
+}
+
+include {
+  path = find_in_parent_folders()
+}
