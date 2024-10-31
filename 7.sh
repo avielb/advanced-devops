@@ -16,5 +16,9 @@ app.run()
 
 
 import requests
-response = requests.get("http://localhost:5000")
-print(response.text)
+response = requests.get("http://127.0.0.1:5000/names")
+result = response.json()
+expected = "Alice1"
+actual = result[0]["name"]
+assert actual == expected
+
