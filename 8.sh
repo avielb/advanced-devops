@@ -9,6 +9,6 @@ docker run -d --name avielb  --network jenkins -e JENKINS_URL=http://my-jenkins:
 
 node { 
     stage("aviel"){
-        echo "aviel"
+        sh "date"
     }
 }
