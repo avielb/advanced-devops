@@ -19,3 +19,18 @@ circle ci
 codefresh
 jfrog pipelines
 codebuild / codepipeline - dont touch
+
+
+node("avielb") { 
+    stage("aviel"){
+        sh("date; ls -ltr")
+    }
+    stage("wait"){
+        sleep 3
+    }
+    stage("aviel"){
+        echo "wow"
+    }
+    
+    
+}
