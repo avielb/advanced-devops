@@ -12,3 +12,10 @@ node {
         sh "date"
     }
 }
+
+github actions
+gitlab ci
+circle ci
+codefresh
+jfrog pipelines
+codebuild / codepipeline - dont touch
