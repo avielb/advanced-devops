@@ -28,8 +28,8 @@ node("avielb") {
     stage("wait"){
         sleep 3
     }
-    stage("aviel"){
-        echo "wow"
+    stage("blabla"){
+        echo env.NAME
     }
     
     
