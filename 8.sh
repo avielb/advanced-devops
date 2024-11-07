@@ -34,3 +34,21 @@ node("avielb") {
     
     
 }
+
+
+
+pipeline {
+    agent any  
+    environment {
+        
+        MY_VAR = 'some_value'
+    }
+    stages { 
+        stage("one"){
+            steps{
+                echo "wow: ${MY_VAR}"
+                
+            }
+        }
+    }
+}
