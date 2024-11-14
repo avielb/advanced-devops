@@ -10,3 +10,4 @@ git commit -am "init commit"
 cd ~/devops && mkdir branches && cd branches
 echo 1 > 1.txt 
 git add . && git commit -am "init commit"
+git clone https://github.com/avielb/advanced-devops.git
