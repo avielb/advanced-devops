@@ -7,3 +7,4 @@ echo 1 > 1.txt
 git config --global user.email "you@example.com"
 git config --global user.name "avielb"
 git commit -am "init commit"
+cd ~/devops && mkdir branches && cd branches
