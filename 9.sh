@@ -4,3 +4,5 @@ apt update && apt install -y git
 mkdir devops && cd devops
 mkdir 1909-first-repo && cd 1909-first-repo
 echo 1 > 1.txt
+git config --global user.email "you@example.com"
+git config --global user.name "avielb"
