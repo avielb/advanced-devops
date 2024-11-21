@@ -27,3 +27,25 @@ jobs:
 
     - name: Run ls -l
       run: ls -l
+_________________________________________
+
+
+
+
+name: Run on Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main  # Trigger the action only for PRs targeting the main branch
+
+jobs:
+  list-files:
+    runs-on: ubuntu-latest  # Run on the latest Ubuntu environment
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3  # Checkout the pull request code
+
+    - name: Run ls -l
+      run: ls -l  # List the files in the current directory
