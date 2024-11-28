@@ -6,3 +6,4 @@ echo 1 >  a/b/c/1.txt
 
 
 apt update && apt install less -y
+tail -100 bootstrap.log | grep Setting | awk '{print $4}'
