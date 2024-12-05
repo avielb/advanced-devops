@@ -6,7 +6,7 @@ docker run -d --name nginx1 --network test nginx:alpine
 docker run -d --name nginx2 --network test nginx:alpine
 
 ---------------------------
-
+docker-compose.yaml
 
 version: '3'
 
