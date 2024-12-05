@@ -8,8 +8,6 @@ docker run -d --name nginx2 --network test nginx:alpine
 ---------------------------
 docker-compose.yaml
 
-version: '3'
-
 services:
   nginx:
     image: nginx:latest
