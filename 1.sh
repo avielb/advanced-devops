@@ -4,3 +4,16 @@ COPY app.py /app.py
 CMD ["python", "/app.py"]
 docker run -d --name nginx1 --network test nginx:alpine
 docker run -d --name nginx2 --network test nginx:alpine
+
+---------------------------
+
+
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8083:80"
+    
