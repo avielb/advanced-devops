@@ -7,3 +7,4 @@ kubectl describe deployment example-deployment
 kubectl scale deployment example-deployment --replicas=10
 kubectl set image deployment example-deployment  nginx=redis:alpine
 kubectl expose deployment example-deployment --port=80 --type=ClusterIP
+kubectl set image deployment/example-deployment nginx=nginx:alpine
