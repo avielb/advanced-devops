@@ -9,3 +9,5 @@ kubectl set image deployment example-deployment  nginx=redis:alpine
 kubectl expose deployment example-deployment --port=80 --type=ClusterIP
 kubectl set image deployment/example-deployment nginx=nginx:alpine
 kubectl describe service example-deployment
+kubectl delete service example-deployment
+kubectl expose deployment example-deployment --port=80 --type=LoadBalancer
