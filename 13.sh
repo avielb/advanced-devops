@@ -12,3 +12,4 @@ kubectl describe service example-deployment
 kubectl delete service example-deployment
 kubectl expose deployment example-deployment --port=80 --type=LoadBalancer
 https://github.com/avielb/k8s-demo
+kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/pod-with-service.yaml
