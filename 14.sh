@@ -10,3 +10,4 @@ git clone https://github.com/avielb/k8s-demo.git
 cd k8s-demo/volumes
 kubectl create configmap game-config --from-file=configs/
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/pod-with-config-map.yaml
+kubectl exec -it pod-env-var -- bash
