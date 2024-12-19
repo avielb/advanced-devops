@@ -19,3 +19,4 @@ https://artifacthub.io/
 https://artifacthub.io/packages/helm/bitnami/nginx
 helm upgrade -i my-release oci://registry-1.docker.io/bitnamicharts/nginx
 kubectl get service,cm,deploy
+helm upgrade -i my-release oci://registry-1.docker.io/bitnamicharts/nginx --set replicaCount=3
