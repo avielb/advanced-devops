@@ -5,3 +5,4 @@ kubectl exec -it task-pv-pod -- bash
 cd /usr/share/nginx/html
 exit
 kubectl debug node/docker-desktop -it --image=ubuntu
+kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/config-map.yaml
