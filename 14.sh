@@ -23,3 +23,6 @@ helm upgrade -i my-release oci://registry-1.docker.io/bitnamicharts/nginx --set 
 helm history my-release
 helm rollback my-release 1
 helm uninstall my-release
+
+helm create my-chart 
+helm template my-release ./
