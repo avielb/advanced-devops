@@ -16,3 +16,4 @@ exit
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/secret.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/pod-with-secret.yaml
 https://artifacthub.io/
+https://artifacthub.io/packages/helm/bitnami/nginx
