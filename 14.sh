@@ -3,3 +3,5 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/ma
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/pod-with-pvc.yaml
 kubectl exec -it task-pv-pod -- bash
 cd /usr/share/nginx/html
+exit
+kubectl debug node/docker-desktop -it --image=ubuntu
