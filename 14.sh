@@ -18,3 +18,4 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/ma
 https://artifacthub.io/
 https://artifacthub.io/packages/helm/bitnami/nginx
 helm upgrade -i my-release oci://registry-1.docker.io/bitnamicharts/nginx
+kubectl get service,cm,deploy
