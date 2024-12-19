@@ -22,3 +22,4 @@ kubectl get service,cm,deploy
 helm upgrade -i my-release oci://registry-1.docker.io/bitnamicharts/nginx --set replicaCount=3
 helm history my-release
 helm rollback my-release 1
+helm uninstall my-release
