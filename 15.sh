@@ -6,7 +6,7 @@ ssh-keygen
 ansible -i hosts servers -m ping
 mkdir -p /etc/ansible
 cp hosts /etc/ansible/hosts
-https://galaxy.ansible.com/ui/standalone/roles/geerlingguy/java/
+ansible-galaxy role install robertdebock.npm
 
 
 
