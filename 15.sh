@@ -6,3 +6,13 @@ ssh-keygen
 ansible -i hosts servers -m ping
 mkdir -p /etc/ansible
 cp hosts /etc/ansible/hosts
+
+
+
+
+
+
+
+- name: what is a
+  debug:
+    msg: "a is {{a}}"
