@@ -12,3 +12,8 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 
 https://github.com/avielb/tf-demo
+
+for mac:
+-----------
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
