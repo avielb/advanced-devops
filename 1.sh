@@ -28,3 +28,6 @@ https://developer.hashicorp.com/terraform/install
 terraform.tfvars
 
 server_name = "moshe2"
+
+
+terraform apply -var-file=myvars.tfvars
