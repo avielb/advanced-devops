@@ -23,7 +23,7 @@ for windows:
 ------------
 https://developer.hashicorp.com/terraform/install
 
-
+ami-02dcfe5d1d39baa4e
 
 terraform.tfvars
 
