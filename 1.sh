@@ -22,3 +22,9 @@ brew install hashicorp/tap/terraform
 for windows:
 ------------
 https://developer.hashicorp.com/terraform/install
+
+
+
+terraform.tfvars
+
+server_name = "moshe2"
