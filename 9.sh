@@ -13,3 +13,6 @@ echo 1 > 1.txt
 git add . && git commit -am "init commit"
 git clone https://github.com/avielb/advanced-devops.git
 # kukuku
+
+
+https://us02web.zoom.us/j/3729349995?pwd=d1lpNVpLY0FjeXhqREVqWnZieXpNQT09
