@@ -7,3 +7,5 @@ mkdir -p a/b/c/d/e
 mkdir -p a/b/c/f
 echo $COURSE > name.txt
 cat name.txt
+cp -r a /tmp/moshe
+mv file1 /tmp/david2
