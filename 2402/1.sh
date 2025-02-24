@@ -16,3 +16,4 @@ apt install less
 cd /var/log
 less dpkg.log
 cat dpkg.log | grep "status installed"
+cat dpkg.log | grep "status installed" | awk '{print $5}'
