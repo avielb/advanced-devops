@@ -9,3 +9,5 @@ echo $COURSE > name.txt
 cat name.txt
 cp -r a /tmp/moshe
 mv file1 /tmp/david2
+cd /tmp/DevOps2402
+tar -cvf artifact.tar .
