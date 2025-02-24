@@ -13,3 +13,5 @@ cd /tmp/DevOps2402
 tar -cvf artifact.tar .
 apt update 
 apt install less
+cd /var/log
+less dpkg.log
