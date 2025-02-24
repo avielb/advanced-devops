@@ -15,3 +15,4 @@ apt update
 apt install less
 cd /var/log
 less dpkg.log
+cat dpkg.log | grep "status installed"
