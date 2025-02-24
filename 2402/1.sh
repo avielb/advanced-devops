@@ -11,3 +11,5 @@ cp -r a /tmp/moshe
 mv file1 /tmp/david2
 cd /tmp/DevOps2402
 tar -cvf artifact.tar .
+apt update 
+apt install less
