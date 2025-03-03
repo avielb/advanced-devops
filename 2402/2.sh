@@ -42,6 +42,9 @@ nano docker-compose.yaml
 -----
 services:
   nginx:
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
     image: nginx:alpine
     container_name: my_nginx
     ports:
