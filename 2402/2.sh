@@ -24,3 +24,4 @@ docker run -d --name test nginx:alpine
 docker exec -it test sh
 docker stop test
 docker start test
+docker rm -vf test
