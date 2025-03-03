@@ -21,3 +21,4 @@ docker run --name myapp -d myimage
 docker logs myapp
 
 docker run -d --name test nginx:alpine
+docker exec -it test sh
