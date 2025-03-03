@@ -29,5 +29,7 @@ docker rm -vf test
 
 
 docker network create example
-docker run -d nginx:alpine --name container1 --network example
-docker run -d nginx:alpine --name container2 --network example
+docker run -d  --name container1 --network example nginx:alpine
+docker run -d  --name container2 --network example nginx:alpine
+
+docker network inspect example
