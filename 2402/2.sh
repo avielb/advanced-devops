@@ -13,6 +13,6 @@ ENV AAA=bbb
 COPY 1.py /app
 RUN pip install requests
 CMD ["python", "/app/1.py"]
+# move Dockerfile.txt Dockerfile
 
-
-move Dockerfile.txt Dockerfile
+docker build -t myimage .
