@@ -17,3 +17,5 @@ CMD ["python", "/app/1.py"]
 # move Dockerfile.txt Dockerfile
 
 docker build -t myimage .
+docker run --name myapp -d myimage
+docker logs myapp
