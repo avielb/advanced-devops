@@ -11,3 +11,7 @@ Dockerfile
 FROM python:alpine
 COPY 1.py /app
 CMD ["python", "/app/1.py"]
+
+
+
+move Dockerfile.txt Dockerfile
