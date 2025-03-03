@@ -19,3 +19,5 @@ CMD ["python", "/app/1.py"]
 docker build -t myimage .
 docker run --name myapp -d myimage
 docker logs myapp
+
+docker run -d --name test nginx:alpine
