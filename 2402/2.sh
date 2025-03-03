@@ -37,7 +37,7 @@ docker exec -it container1 sh
 curl http://container2
 -------------------
 
-notepoad docker-compose.yaml
+notepad docker-compose.yaml
 nano docker-compose.yaml
 -----
 services:
