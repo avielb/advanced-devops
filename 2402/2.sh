@@ -42,7 +42,7 @@ nano docker-compose.yaml
 -----
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:alpine
     container_name: my_nginx
     ports:
       - "8080:80"
