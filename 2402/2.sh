@@ -34,3 +34,4 @@ docker run -d  --name container2 --network example nginx:alpine
 
 docker network inspect example
 docker exec -it container1 sh
+curl http://container2
