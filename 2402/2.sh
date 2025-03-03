@@ -48,3 +48,5 @@ services:
       - "8080:80"
 
 move docker-compose.yaml.txt docker-compose.yaml
+
+docker compose up -d
