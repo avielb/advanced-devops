@@ -45,10 +45,19 @@ services:
     environment:
       - NGINX_HOST=localhost
       - NGINX_PORT=80
+      - AVIEL=moshe
     image: nginx:alpine
     container_name: my_nginx
     ports:
       - "8080:80"
+  alpine:
+    image: alpine:latest
+    container_name: my_alpine
+    command: ["sleep", "infinity"]
+    environment:
+      - MY_VAR=example
+    restart: always
+
 
 move docker-compose.yaml.txt docker-compose.yaml
 
