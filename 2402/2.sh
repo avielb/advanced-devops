@@ -26,3 +26,8 @@ docker ps
 docker stop test
 docker start test
 docker rm -vf test
+
+
+docker network create example
+docker run -d nginx:alpine --name container1 --network example
+docker run -d nginx:alpine --name container2 --network example
