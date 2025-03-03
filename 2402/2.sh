@@ -35,3 +35,14 @@ docker run -d  --name container2 --network example nginx:alpine
 docker network inspect example
 docker exec -it container1 sh
 curl http://container2
+-------------------
+
+notepoad docker-compose.yaml
+nano docker-compose.yaml
+-----
+services:
+  nginx:
+    image: nginx:latest
+    container_name: my_nginx
+    ports:
+      - "8080:80"
