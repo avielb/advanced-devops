@@ -33,3 +33,4 @@ docker run -d  --name container1 --network example nginx:alpine
 docker run -d  --name container2 --network example nginx:alpine
 
 docker network inspect example
+docker exec -it container1 sh
