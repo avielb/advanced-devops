@@ -60,11 +60,10 @@ services:
 
 
 move docker-compose.yaml.txt docker-compose.yaml
+https://hub.docker.com/
 
 docker compose up -d
 docker tag myimage avielb/myimage-2402:v0.1
 docker push avielb/myimage-2402:v0.1
 
-https://hub.docker.com/
 
-docker tag myimage avielb/myimage-2402:v0.1
