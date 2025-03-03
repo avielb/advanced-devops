@@ -46,3 +46,5 @@ services:
     container_name: my_nginx
     ports:
       - "8080:80"
+
+move docker-compose.yaml.txt docker-compose.yaml
