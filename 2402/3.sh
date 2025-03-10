@@ -61,3 +61,6 @@ spec:
       - sleep
       - "3600"
 -------
+
+
+https://github.com/avielb/k8s-demo/tree/master/guestbook
