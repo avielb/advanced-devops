@@ -64,3 +64,6 @@ spec:
 
 
 https://github.com/avielb/k8s-demo/tree/master/guestbook
+
+
+kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/guestbook/cronjob.yaml
