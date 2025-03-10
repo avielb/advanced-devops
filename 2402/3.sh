@@ -12,5 +12,6 @@ kubectl describe service hello-node
 kubectl scale deployment hello-node --replicas=2
 kubectl delete service hello-node
 kubectl delete service hello-node
+kubectl delete deployment hello-node
 kubectl expose deploy/hello-node --type NodePort --port 80
 https://kubernetes.io/docs/reference/kubectl/generated/kubectl_completion/
