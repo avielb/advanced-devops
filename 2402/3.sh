@@ -16,4 +16,48 @@ kubectl delete deployment hello-node
 kubectl expose deploy/hello-node --type NodePort --port 80
 https://kubernetes.io/docs/reference/kubectl/generated/kubectl_completion/
 kubectl expose deploy/hello-node --type LoadBalancer --port 80
+kubectl delete pod nginx
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/pod-with-service.yaml
+----------
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-gate
+spec:
+  selector:
+    name: nginx
+  type: NodePort
+  ports:
+  - name: foo # Actually, no port is needed.
+    port: 80
+    targetPort: 80
+  - name: bar # Actually, no port is needed.
+    port: 8081
+    targetPort: 8081
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    name: nginx
+spec:
+  #hostname: frontend001
+  containers:
+  - image: nginx
+    name: nginx-container
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debian
+  labels:
+    name: debian
+spec:
+  containers:
+  - image: debian
+    name: debian-container
+    command:
+      - sleep
+      - "3600"
+-------
