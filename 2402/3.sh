@@ -7,3 +7,4 @@ kubectl delete pod nginx
 kubectl scale deployment hello-node --replicas=20
 kubectl set image deploy/hello-node nginx=nginx:latest
 kubectl describe deployment hello-node
+kubectl expose deploy/hello-node --type ClusterIP --port 80
