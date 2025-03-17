@@ -18,3 +18,5 @@ kubectl exec -it pod-env-var -- bash
 cat /app/game.properties
 exit
 kubectl describe configmap game-config
+kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/secret.yaml
+kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/pod-with-secret.yaml
