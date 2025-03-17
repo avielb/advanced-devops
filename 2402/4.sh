@@ -7,3 +7,4 @@ kubectl exec -it task-pv-pod -- bash
 cd usr/share/nginx/html/
 echo 1 > index.html
 exit
+kubectl debug node/docker-desktop -it --image=busybox -- sh
