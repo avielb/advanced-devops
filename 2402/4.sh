@@ -20,4 +20,5 @@ exit
 kubectl describe configmap game-config
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/secret.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/pod-with-secret.yaml
+kubectl delete -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/statefulset.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/statefulset.yaml
