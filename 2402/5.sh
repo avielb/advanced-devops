@@ -12,4 +12,8 @@ helm upgrade -i myrelease ./
 helm upgrade -i myrelease ./
 helm list
 helm uninstall myrelease
+# in a new file called `values-prod.yaml` write
+replicaCount: 5
+
+
 helm upgrade -i myrelease -f values-prod.yaml ./
