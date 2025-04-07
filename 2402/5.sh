@@ -5,3 +5,5 @@ in the terminal:
 kubectl get pods 
 helm list
 helm create mychart
+cd mychart
+helm template mychart ./
