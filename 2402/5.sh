@@ -38,3 +38,19 @@ helm rollback adamapp 2
 helm get values adamapp --all
 helm get manifest adamapp
 helm plugin install https://github.com/databus23/helm-diff
+
+https://artifacthub.io/
+
+
+
+Chart.yaml 
+apiVersion: v2
+appVersion: 1.16.0
+description: A Helm chart for Kubernetes
+name: mychart
+type: application
+version: 0.2.0
+dependencies:
+  - name: redis
+    version: 20.11.4
+    repository: oci://registry-1.docker.io/bitnamicharts
