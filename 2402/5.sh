@@ -22,3 +22,9 @@ helm registry login registry-1.docker.io -u avielb
 # to create a token:
 https://app.docker.com/settings/personal-access-tokens
 helm push mychart-0.1.0.tgz oci://registry-1.docker.io/avielb
+
+
+in Chart.yaml, edit from:
+version: 0.1.0
+to 
+version: 0.2.0
