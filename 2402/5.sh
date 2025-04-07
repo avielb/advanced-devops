@@ -10,3 +10,5 @@ helm template mychart ./
 helm upgrade -i myrelease ./
 # change replicaCount to 3
 helm upgrade -i myrelease ./
+helm list
+helm uninstall myrelease
