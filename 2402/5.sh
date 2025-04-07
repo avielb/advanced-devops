@@ -12,3 +12,4 @@ helm upgrade -i myrelease ./
 helm upgrade -i myrelease ./
 helm list
 helm uninstall myrelease
+helm upgrade -i myrelease -f values-prod.yaml ./
