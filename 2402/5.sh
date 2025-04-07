@@ -37,3 +37,4 @@ helm rollback adamapp
 helm rollback adamapp 2
 helm get values adamapp --all
 helm get manifest adamapp
+helm plugin install https://github.com/databus23/helm-diff
