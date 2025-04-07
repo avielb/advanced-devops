@@ -44,6 +44,7 @@ https://artifacthub.io/
 
 
 Chart.yaml 
+###########################################
 apiVersion: v2
 appVersion: 1.16.0
 description: A Helm chart for Kubernetes
