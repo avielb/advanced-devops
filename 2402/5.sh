@@ -17,3 +17,4 @@ replicaCount: 5
 
 
 helm upgrade -i myrelease -f values-prod.yaml ./
+helm package ./mychart
