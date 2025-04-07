@@ -42,7 +42,7 @@ helm plugin install https://github.com/databus23/helm-diff
 https://artifacthub.io/
 
 
-
+helm uninstall adamapp my-release
 Chart.yaml 
 ###########################################
 apiVersion: v2
