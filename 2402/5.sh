@@ -18,3 +18,4 @@ replicaCount: 5
 
 helm upgrade -i myrelease -f values-prod.yaml ./
 helm package ./mychart
+helm registry login registry-1.docker.io -u avielb
