@@ -19,4 +19,5 @@ replicaCount: 5
 helm upgrade -i myrelease -f values-prod.yaml ./
 helm package ./mychart
 helm registry login registry-1.docker.io -u avielb
+# to create a token:
 https://app.docker.com/settings/personal-access-tokens
