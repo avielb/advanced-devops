@@ -28,3 +28,12 @@ in Chart.yaml, edit from:
 version: 0.1.0
 to 
 version: 0.2.0
+
+helm upgrade -i adamapp oci://registry-1.docker.io/adamlor/mychart --set replicaCount=1
+
+helm fetch --untar  oci://registry-1.docker.io/adamlor/mychart
+helm history adamapp
+helm rollback adamapp
+helm rollback adamapp 2
+helm get values adamapp --all
+helm get manifest adamapp
