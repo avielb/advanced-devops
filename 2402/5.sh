@@ -7,3 +7,4 @@ helm list
 helm create mychart
 cd mychart
 helm template mychart ./
+ helm upgrade -i myrelease ./
