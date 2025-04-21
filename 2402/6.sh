@@ -6,3 +6,6 @@ git credential-osxkeychain erase
 host=github.com
 protocol=https
 [Press Return]
+
+https://github.com/new
+https://github.com/settings/tokens/new
