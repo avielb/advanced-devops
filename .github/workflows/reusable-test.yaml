@@ -1,0 +1,17 @@
+name: Reusable Test Workflow
+on:
+  workflow_call:
+    inputs:
+      cool_var:
+        required: true
+        type: string
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: show_var
+        run: |
+          echo "cool_var is: ${{ inputs.cool_var }}"

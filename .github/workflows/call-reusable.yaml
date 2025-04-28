@@ -1,0 +1,11 @@
+name: Call Reusable Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  use-reusable:
+    uses: avielb/2402-first-repo/.github/workflows/reusable-test.yaml@main
+    with:
+      cool_var: "amazing"

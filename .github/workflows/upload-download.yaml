@@ -1,0 +1,33 @@
+name: Upload and Print Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - run: mkdir -p test
+      - run: echo hello > test/world.txt
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: test/world.txt
+
+  print-file:
+    needs: upload-file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: Print file content
+        run: cat world.txt

@@ -1,0 +1,47 @@
+name: Combined Sequential and Parallel Jobs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build the project
+        run: echo "Building project..."
+
+  unit_tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Unit Tests
+        run: echo "Running unit tests..."
+
+  integration_tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Integration Tests
+        run: echo "Running integration tests..."
+
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Linter
+        run: echo "Running linter..."
+
+  deploy:
+    needs: 
+      - unit_tests
+      - integration_tests
+      - lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Production
+        run: echo "Deploying to production..."

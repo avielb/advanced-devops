@@ -1,0 +1,19 @@
+name: Upload Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - run: mkdir -p test
+      - run: echo hello > test/world.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: test/world.txt
