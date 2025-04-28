@@ -40,3 +40,8 @@ add the following content:
 
 def test_one_equals_one():
     assert 1 == 1
+
+
+add requirements.txt and write:
+flask
+pytest
