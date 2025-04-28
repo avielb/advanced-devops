@@ -8,6 +8,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      MYVAR: "Hello, World!"
     strategy:
       matrix:
         python: [3.9, 3.12, 3.11]
@@ -15,6 +17,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: show var
+        run: |
+          echo ${MYVAR}
       - name: Setup Python
         uses: actions/setup-python@v3
         with:
