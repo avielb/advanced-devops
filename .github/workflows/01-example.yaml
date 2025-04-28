@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    container: python:3.11
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
