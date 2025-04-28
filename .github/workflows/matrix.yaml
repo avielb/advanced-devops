@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
       - name: show var
         run: |
-          echo ${MYVAR}
+          echo ${{ env.MYVAR }}
       - name: Setup Python
         uses: actions/setup-python@v3
         with:
