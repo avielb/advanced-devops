@@ -110,3 +110,6 @@ COPY app.py .
 
 # Run the app
 CMD ["python", "app.py"]
+
+
+https://github.com/avielb/advanced-devops/blob/master/.github/workflows/docker-build-push.yaml
