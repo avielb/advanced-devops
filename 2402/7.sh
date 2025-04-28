@@ -28,3 +28,15 @@ jobs:
 ----
 https://github.com/avielb/advanced-devops/blob/master/.github/workflows/seq-and-para.yaml
 https://github.com/avielb/advanced-devops/blob/master/.github/workflows/matrix.yaml
+
+
+
+
+
+under the main git repo folder 
+create file test_example.py
+
+add the following content:
+
+def test_one_equals_one():
+    assert 1 == 1
