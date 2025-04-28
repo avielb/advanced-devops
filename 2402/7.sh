@@ -45,3 +45,27 @@ def test_one_equals_one():
 add requirements.txt and write:
 flask
 pytest
+
+
+
+name: Deploy to Production
+#####################
+# create secrets before running this
+#####################
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Server
+        run: |
+          echo "secret string is: ${{ secrets.SECRET_STRING }}"
