@@ -26,3 +26,4 @@ jobs:
           ls -ltr
 
 ----
+https://github.com/avielb/advanced-devops/blob/master/.github/workflows/seq-and-para.yaml
