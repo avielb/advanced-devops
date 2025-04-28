@@ -1,5 +1,7 @@
 name: Build and Push Docker Image
-
+####################
+# create dockerhub token before running this
+####################
 on:
   push:
     branches:
