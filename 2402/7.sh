@@ -2,15 +2,11 @@
 mkdir .github/workflows
 cd .github/workflows
 create a file: 01-example.yaml
+---
 name: Run Tests
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   test:
@@ -22,3 +18,4 @@ jobs:
       - name: show files
         run: |
           ls -ltr
+
