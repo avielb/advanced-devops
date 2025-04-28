@@ -7,6 +7,6 @@ on:
 
 jobs:
   use-reusable:
-    uses: avielb/2402-first-repo/.github/workflows/reusable-test.yaml@main
+    uses: avielb/advanced-devops/.github/workflows/reusable-test.yaml@master
     with:
       cool_var: "amazing"

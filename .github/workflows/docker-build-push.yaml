@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/myimage-2402:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/myimage-2402:v0.${{github.run_number}}
