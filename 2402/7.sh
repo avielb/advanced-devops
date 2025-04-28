@@ -75,3 +75,21 @@ jobs:
 PR 
 ---
 https://github.com/avielb/advanced-devops/blob/f80777bd5164728f1e945b523e72aceddb2fca04/.github/workflows/pr-comment.yaml
+
+
+
+
+
+
+
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello from GitHub Actions + Docker!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
