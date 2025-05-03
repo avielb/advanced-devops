@@ -9,11 +9,38 @@ argocd app create static-site \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace default
 
+# syncPolicies - manual, automated
+
 # create kubernetes yamls in everyone's git repo
 # make sure each one is use their docker image
 # create application in UI
 # look at the created resource
-# update yamls in repo
-# syncPolicies - manual, automated
+# update yamls in repo for replicas and docker image
 
 
+----
+# helm charts
+# talk about application and CRD
+helm create mychart
+# create application in UI
+# add the following application yaml in the UI.
+```
+project: default
+source:
+  repoURL: https://github.com/avielb/advanced-devops.git
+  path: gitops/argocd/mychart
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+destination:
+  server: https://kubernetes.default.svc
+  namespace: default
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+```
+
+
+## add values-dev.yaml , values-prod.yaml
