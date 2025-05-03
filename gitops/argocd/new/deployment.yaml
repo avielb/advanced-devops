@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-site
+  template:
+    metadata:
+      labels:
+        app: nginx-site
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
