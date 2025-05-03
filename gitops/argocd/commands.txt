@@ -18,36 +18,12 @@ argocd app create static-site \
 # update yamls in repo for replicas and sync
 
 
-----
-# helm charts
-# talk about application and CRD
-helm create mychart in `gitops/argocd/`
-add values-image.yaml with:
-```
-repository:
-  tag: v0.1
-```
-commit and push chart
-# create application in UI, commit the chart and push
-# add the following application yaml in the UI.
-```
-project: default
-source:
-  repoURL: https://github.com/avielb/advanced-devops.git
-  path: gitops/argocd/mychart
-  targetRevision: HEAD
-  helm:
-    valueFiles:
-      - values.yaml
-      - values-image.yaml
-destination:
-  server: https://kubernetes.default.svc
-  namespace: default
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-```
+
+
+#############################################
+# Full CI/CD EXAMPLE
+#############################################
+Create docker image and push to dockerhub
 ### in the git repo add:
 app.py:
 ```
@@ -85,7 +61,48 @@ COPY app.py .
 # Run the app
 CMD ["python", "app.py"]
 ```
+
+#################################################
+# Create github workflow
+##############################################
+# workflow from docker-build.yaml
+# look at `platform`
+
+
+############################################
+# kubernetes deployment
+##########################################
+
+Helm chart
+----
+# talk about application and CRD
+helm create mychart in `gitops/argocd/`
+add values-image.yaml with:
+```
+image:
+  tag: v0.1
+```
+commit and push chart
+# create application in UI, commit the chart and push
+# add the following application yaml in the UI.
+```
+project: default
+source:
+  repoURL: https://github.com/avielb/advanced-devops.git
+  path: gitops/argocd/mychart
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+      - values-image.yaml
+destination:
+  server: https://kubernetes.default.svc
+  namespace: default
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+```
+### in the git repo add:
 ## add values-dev.yaml, values-prod.yaml
 ## add the github workflow `docker-build.yaml`
-------
-
