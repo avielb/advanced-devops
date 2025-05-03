@@ -35,11 +35,12 @@ jobs:
       - name: Update values.yaml with new image tag
         run: |
           echo "repository:\n  tag: v0.${{ github.run_number }}" gitops/argocd/mychart/values-image.yaml
+          
 
       - name: Commit updated values.yaml
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add gitops/argocd/mychart/values.yaml
+          git add gitops/argocd/mychart/values-image.yaml
           git commit -m "Update image tag to 0.${{ github.run_number }}"
           git push
