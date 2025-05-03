@@ -34,7 +34,7 @@ jobs:
 
       - name: Update values.yaml with new image tag
         run: |
-          echo -e "repository:\n  tag: v0.${{ github.run_number }}" > gitops/argocd/mychart/values-image.yaml
+          echo -e "image:\n  tag: v0.${{ github.run_number }}" > gitops/argocd/mychart/values-image.yaml
           
 
       - name: Commit updated values.yaml
