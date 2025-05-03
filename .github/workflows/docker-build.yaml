@@ -41,6 +41,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add gitops/argocd/mychart/values-image.yaml
+          git status
+          git add .
           git commit -m "Update image tag to 0.${{ github.run_number }}"
           git push

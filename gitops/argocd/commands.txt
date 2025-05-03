@@ -33,6 +33,8 @@ source:
   helm:
     valueFiles:
       - values.yaml
+      # - values-dev.yaml
+      # - values-prod.yaml
 destination:
   server: https://kubernetes.default.svc
   namespace: default
