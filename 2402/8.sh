@@ -38,3 +38,7 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+
+
+https://github.com/avielb/2402-argocd/tree/main
