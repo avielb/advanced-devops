@@ -106,3 +106,12 @@ syncPolicy:
 ### in the git repo add:
 ## add values-dev.yaml, values-prod.yaml
 ## add the github workflow `docker-build.yaml`
+------------------------------------------------------
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE=*
+export GITHUB_TOKEN=ghp_.....
+flux bootstrap github \                                                                                                                                                                                         (docker-desktop/default)
+  --owner=avielb \
+  --repository=advanced-devops \
+  --branch=master \
+  --path=./gitops/flux/docker-desktop \
+  --personal
