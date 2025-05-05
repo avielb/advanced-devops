@@ -10,3 +10,5 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 create new repo called: 2402-argocd
 https://github.com/new
+add this: 
+https://github.com/avielb/2402-argocd/blob/main/example.yaml
