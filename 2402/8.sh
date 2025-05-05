@@ -44,3 +44,29 @@ spec:
 https://github.com/avielb/2402-argocd/tree/main
 
 https://app.docker.com/settings/personal-access-tokens/create - Read, Write, Delete
+
+
+
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'myrelease'
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/avielb/2402-argocd.git
+    path: mychart
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-image.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
