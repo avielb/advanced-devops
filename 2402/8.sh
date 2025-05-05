@@ -17,3 +17,24 @@ https://github.com/avielb/2402-argocd/blob/main/svc.yaml
 https://github.com/avielb/advanced-devops.git
 ./gitops/argocd/mychart
 
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myrelease
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/avielb/advanced-devops.git
+    path: gitops/argocd/mychart
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
