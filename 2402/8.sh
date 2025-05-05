@@ -12,3 +12,4 @@ create new repo called: 2402-argocd
 https://github.com/new
 add this: 
 https://github.com/avielb/2402-argocd/blob/main/example.yaml
+https://github.com/avielb/2402-argocd/blob/main/svc.yaml
