@@ -13,3 +13,7 @@ https://github.com/new
 add this: 
 https://github.com/avielb/2402-argocd/blob/main/example.yaml
 https://github.com/avielb/2402-argocd/blob/main/svc.yaml
+
+https://github.com/avielb/advanced-devops.git
+./gitops/argocd/mychart
+
