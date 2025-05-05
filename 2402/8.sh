@@ -42,3 +42,5 @@ spec:
 
 
 https://github.com/avielb/2402-argocd/tree/main
+
+https://app.docker.com/settings/personal-access-tokens/create - Read, Write, Delete
