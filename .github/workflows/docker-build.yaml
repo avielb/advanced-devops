@@ -31,11 +31,11 @@ jobs:
           context: .
           platforms: linux/arm64
           push: true
-          tags: avielb/2402-myimage:v0.${{ github.run_number }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/2402-myimage:v0.${{ github.run_number }}
 
       - name: Update values.yaml with new image tag
         run: |
-          echo -e "image:\n  tag: v0.${{ github.run_number }}" > gitops/argocd/mychart/values-image.yaml
+          echo -e "image:\n  tag: v0.${{ github.run_number }}" > mychart/values-image.yaml
           
 
       - name: Commit updated values.yaml

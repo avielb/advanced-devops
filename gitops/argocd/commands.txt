@@ -88,8 +88,8 @@ commit and push chart
 ```
 project: default
 source:
-  repoURL: https://github.com/avielb/advanced-devops.git
-  path: gitops/argocd/mychart
+  repoURL: https://github.com/avielb/2402-argocd.git
+  path: mychart
   targetRevision: HEAD
   helm:
     valueFiles:
