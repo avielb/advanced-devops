@@ -19,4 +19,5 @@
 16. kubectl -n monitoring port-forward svc/prometheus-alertmanager 9093:9093
 17. kubectl -n monitoring port-forward svc/prometheus-prometheus-pushgateway 9091:9091
 
+ab -n 10000 -c 100 http://127.0.0.1:9090/
 kubectl patch ds prometheus-prometheus-node-exporter --type "json" -p '[{"op": "remove", "path" : "/spec/template/spec/containers/0/volumeMounts/2/mountPropagation"}]' -n monitoring
