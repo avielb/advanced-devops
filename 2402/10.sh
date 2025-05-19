@@ -10,3 +10,6 @@ docker run -d -p 80:80 nginx:alpine
 http://calculator.aws/
 docker rm -vf container-name
 https://k3s.io/
+curl -sfL https://get.k3s.io | sh - 
+# Check for Ready node, takes ~30 seconds 
+sudo k3s kubectl get node 
