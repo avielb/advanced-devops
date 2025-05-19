@@ -4,3 +4,5 @@ https://aws.amazon.com/free/?trk=99f831a2-d162-429a-9a77-a89f6b3bd6cd&sc_channel
 https://us-east-1.console.aws.amazon.com/ec2/
 sudo -i 
 yum install docker -y
+systemctl enable docker
+systemctl start docker
