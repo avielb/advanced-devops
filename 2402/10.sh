@@ -21,3 +21,7 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/advanced-devops/refs/h
 kubectl get pods 
 
 AmazonEC2FullAccess
+-----
+provider "aws" {
+  region = "us-east-1"
+}
