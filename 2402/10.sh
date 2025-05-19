@@ -15,3 +15,7 @@ curl -sfL https://get.k3s.io | sh -
 # Check for Ready node, takes ~30 seconds 
 sudo k3s kubectl get node 
 k3s kubectl get pods -A
+
+alias kubectl='k3s kubectl' 
+kubectl apply -f https://raw.githubusercontent.com/avielb/advanced-devops/refs/heads/master/monitoring/nginx.yaml
+kubectl get pods 
