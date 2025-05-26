@@ -44,3 +44,74 @@ output "myapp" {
 
 -------------------------------------------
 https://registry.terraform.io/browse/modules
+-------------------------------------------
+variables.tf
+----
+variable "region" {
+  description = "The AWS region to create resources in"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "vpc_name" {
+  description = "The name of the VPC"
+  type        = string
+  default     = "my-vpc"
+}
+
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
+variable "public_subnets" {
+  description = "List of public subnet CIDRs"
+  type        = list(string)
+  default     = ["10.0.1.0/24", "10.0.2.0/24"]
+}
+
+variable "private_subnets" {
+  description = "List of private subnet CIDRs"
+  type        = list(string)
+  default     = ["10.0.101.0/24", "10.0.102.0/24"]
+}
+---------------------------------------------
+main.tf
+terraform {
+  required_version = ">= 1.3.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = var.region
+}
+
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.1.0" # Use the latest version
+
+  name = var.vpc_name
+  cidr = var.vpc_cidr
+
+  azs             = slice(data.aws_availability_zones.available.names, 0, 2)
+  private_subnets = var.private_subnets
+  public_subnets  = var.public_subnets
+
+  enable_nat_gateway = true
+  single_nat_gateway = true
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags = {
+    Terraform = "true"
+    Environment = "dev"
+  }
+}
+
+data "aws_availability_zones" "available" {}
