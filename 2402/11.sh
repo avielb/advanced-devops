@@ -133,3 +133,37 @@ data "aws_subnets" "vpc_subnets" {
     values = [data.aws_vpc.selected.id]
   }
 }
+------------------------------
+in class11/dev
+docker-compose.yaml
+---
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack_main
+    ports:
+      - "4566:4566"   # LocalStack Gateway
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LOCALSTACK_SERVICES=s3,lambda,dynamodb # List any other services you want to enable here
+
+volumes:
+  localstack_volume:
+    driver: local
+---
+in class11/dev/localstack/main.tf
+---
+provider "aws" {
+  region     = "us-east-1"
+
+  endpoints {
+    s3 = "http://localhost:4566"
+    iam = "http://localhost:4566"
+  }
+}
+
+resource "aws_s3_bucket" "mybucket" {
+  bucket = "my-local-bucket"
+}
