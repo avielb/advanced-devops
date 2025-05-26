@@ -24,3 +24,6 @@ variable "server_name" {
 output "name" {
   value = "ssh myuser@${var.server_name}"
 }
+--------------------------------------------------
+variable "var1" {}
+variable "var2" {}
