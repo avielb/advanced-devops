@@ -14,3 +14,13 @@ variable "server_name" {
 output "name" {
   value = var.server_name
 }
+----------------------------------------------
+variable "server_name" {
+  type = string
+  default = "moshe.example.com"
+  description = "the name of the server"
+}
+
+output "name" {
+  value = "ssh myuser@${var.server_name}"
+}
