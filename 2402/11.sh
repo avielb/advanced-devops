@@ -41,3 +41,6 @@ module "myapp" {
 output "myapp" {
   value = module.myapp.result
 }
+
+-------------------------------------------
+https://registry.terraform.io/browse/modules
