@@ -31,3 +31,13 @@ variable "var2" {}
 output "result" {
   value = "${var.var1} --- ${var.var2}"
 }
+-------------------------------------------
+module "myapp" {
+  source = "../../modules/myapp"
+  var1 = "moshe"
+  var2 = "david"
+}
+
+output "myapp" {
+  value = module.myapp.result
+}
