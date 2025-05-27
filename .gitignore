@@ -15,6 +15,7 @@ roles/elasticsearch/files/files.iml
 
 #  Local .terraform directories
 **/.terraform/*
+**/.terraform.lock.hcl
 */.terraform.state.d/*
 # .tfstate files
 *.tfstate
