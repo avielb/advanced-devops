@@ -57,3 +57,46 @@ def lambda_handler(event, context):
             'statusCode': 500,
             'body': 'Failed to retrieve the secret.'
         }
+--------------------------------------------
+import boto3
+import json
+
+# Create a DynamoDB client
+dynamodb = boto3.client('dynamodb')
+
+def lambda_handler(event, context):
+    # Scan the DynamoDB table "students"
+    try:
+        response = dynamodb.scan(
+            TableName='students'  # Table name is 'students'
+        )
+        
+        # Get the items from the response
+        items = response.get('Items', [])
+        
+        # Check if there are items and print them
+        if items:
+            print("Items in the 'students' table:")
+            for item in items:
+                print(json.dumps(item, indent=4))
+        else:
+            print("No items found in the 'students' table.")
+            
+        return {
+            'statusCode': 200,
+            'body': json.dumps({
+                'message': 'Successfully fetched items from DynamoDB.',
+                'items': items
+            })
+        }
+
+    except Exception as e:
+        print(f"Error fetching data from DynamoDB: {str(e)}")
+        return {
+            'statusCode': 500,
+            'body': json.dumps({
+                'message': 'Error fetching data from DynamoDB',
+                'error': str(e)
+            })
+        }
+
