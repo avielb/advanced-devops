@@ -11,3 +11,49 @@ def lambda_handler(event, context):
         'body': json.dumps('Hello from Lambda!'),
         'event': event
     }
+---------------------------------------------------------
+import boto3
+import os
+from botocore.exceptions import ClientError
+
+def get_secret(secret_name):
+    """
+    Retrieve the value of a secret from AWS Secrets Manager.
+    :param secret_name: The name or ARN of the secret.
+    :return: Secret value (String or Binary).
+    """
+    # Initialize the boto3 client for Secrets Manager
+    client = boto3.client('secretsmanager')
+    
+    try:
+        # Call Secrets Manager to retrieve the secret value
+        response = client.get_secret_value(SecretId=secret_name)
+        
+        # Secrets Manager response contains either 'SecretString' or 'SecretBinary'
+        if 'SecretString' in response:
+            return response['SecretString']
+        else:
+            # If the secret is binary, decode it
+            return response['SecretBinary']
+    
+    except ClientError as e:
+        print(f"Error retrieving secret: {e}")
+        return None
+
+def lambda_handler(event, context):
+    
+    # Get the secret content
+    secret_value = get_secret("credentials")
+    
+    if secret_value:
+        print(f"Secret retrieved successfully: {secret_value}")
+        # Process the secret (e.g., database password, API keys, etc.)
+        return {
+            'statusCode': 200,
+            'body': f"Secret retrieved: {secret_value[:50]}"  # Just printing the first 50 chars for security
+        }
+    else:
+        return {
+            'statusCode': 500,
+            'body': 'Failed to retrieve the secret.'
+        }
