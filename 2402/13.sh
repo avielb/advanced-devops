@@ -58,3 +58,8 @@ resource "aws_default_security_group" "default" {
     Environment = "dev"
   }
 }
+
+
+#######################
+
+in 2402-first-repo , create folder called vpc and in it copy lines 1 - 60 
