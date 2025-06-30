@@ -62,3 +62,29 @@ resource "aws_default_security_group" "default" {
 #######################
 
 in 2402-first-repo , create folder called vpc and in it copy lines 1 - 60 
+
+
+########################
+1. deploy lambda with the following python code
+2. make it a VPC lambda on a private subnet
+3. make sure it has the right IAM role policy to be a VPC lambda:
+#######################
+import json
+import urllib.request
+import socket
+
+def get_public_ip():
+    try:
+        with urllib.request.urlopen('https://api.ipify.org') as response:
+            ip = response.read().decode()
+            print(f"Public IP Address: {ip}")
+    except Exception as e:
+        print(f"Error fetching public IP: {e}")
+
+
+def lambda_handler(event, context):
+    get_public_ip()
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
