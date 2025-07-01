@@ -7,6 +7,7 @@ topics:
 * route tables
 * NAT GW vs Internet gateway
 * ENI
+* NACL
 * security groups
 
 1. run terraform apply - creates VPC 
