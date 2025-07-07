@@ -44,3 +44,6 @@ node2
 
 [servers:vars]
 var1=moshe
+
+
+ansible-vault create secret.yml
