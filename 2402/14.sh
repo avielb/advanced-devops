@@ -55,4 +55,4 @@ ansible-vault decrypt secret.yml
 
 
 https://galaxy.ansible.com/ui/
-ansible-galaxy role install mubbyrex.java_installer
+ansible-galaxy install geerlingguy.java
