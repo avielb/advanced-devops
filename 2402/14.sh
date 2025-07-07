@@ -12,3 +12,5 @@ ssh-copy-id node2
 mkdir /etc/ansible
 cp hosts /etc/ansible/hosts
 ansible servers -m ping
+apt install vim -y
+vim /etc/passwd
