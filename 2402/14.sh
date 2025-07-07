@@ -36,3 +36,11 @@ cd ../..
     - name: show
       debug:
         msg: "var1 is: {{var1}}"
+
+vim /etc/ansible/hosts
+[servers]
+node1
+node2
+
+[servers:vars]
+var1=moshe
