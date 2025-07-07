@@ -39,7 +39,7 @@ cd ../..
 
 vim /etc/ansible/hosts
 [servers]
-node1
+node1 var1=david
 node2
 
 [servers:vars]
