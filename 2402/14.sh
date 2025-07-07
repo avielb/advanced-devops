@@ -51,3 +51,7 @@ ansible-vault create secret.yml
 secret1: moshe
 
 ansible-vault decrypt secret.yml
+
+
+
+https://galaxy.ansible.com/ui/
