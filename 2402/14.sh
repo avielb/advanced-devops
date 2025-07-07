@@ -56,3 +56,5 @@ ansible-vault decrypt secret.yml
 
 https://galaxy.ansible.com/ui/
 ansible-galaxy install geerlingguy.java
+cd /ansible-demo
+
