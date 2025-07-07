@@ -25,7 +25,7 @@ ssh node2 cat /root/hostname.conf
 cd roles/common/
 mkdir defaults 
 echo -e "---\nvar1: haim" >  defaults/main.yml
-
+cd ../..
 # edit common.yml
 ---
 - hosts: servers
