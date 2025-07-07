@@ -1,2 +1,2 @@
 git clone https://github.com/avielb/ansible-demo
-cd ansible demo
+cd ansible-demo
