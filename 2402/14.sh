@@ -21,3 +21,7 @@ ssh node1 "echo moshe > /var/tmp/aviel.txt"
 
 ssh node1 cat /root/hostname.conf
 ssh node2 cat /root/hostname.conf
+
+cd roles/common/
+mkdir defaults 
+echo -e "---\nvar1: haim" >  defaults/main.yml
