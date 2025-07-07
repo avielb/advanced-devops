@@ -17,3 +17,4 @@ ssh node1
 userdel avielb
 exit
 ansible-playbook demo.yml
+ssh node1 "echo moshe > /var/tmp/aviel.txt"
