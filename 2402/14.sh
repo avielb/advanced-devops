@@ -18,3 +18,6 @@ userdel avielb
 exit
 ansible-playbook demo.yml
 ssh node1 "echo moshe > /var/tmp/aviel.txt"
+
+ssh node1 cat /root/hostname.conf
+ssh node2 cat /root/hostname.conf
