@@ -1,0 +1,27 @@
+
+name: CI Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+    # Undefined secret
+      SSH_KEY: ${{ secrets.MISSING_SECRET }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+          pip install -r requirements.txt
+
+      - name: finish
+        run: |
+          echo "Amazing!"
