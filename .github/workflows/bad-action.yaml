@@ -10,7 +10,6 @@ jobs:
   deploy:
     runs-on: ubuntu1-latest
     env:
-    # Undefined secret
       SSH_KEY: ${{ secrets.MISSING_SECRET }}
     steps:
       - name: Checkout code
