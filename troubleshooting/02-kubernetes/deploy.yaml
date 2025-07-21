@@ -24,7 +24,7 @@ spec:
             - name: APP_MODE
               valueFrom:
                 configMapKeyRef:
-                  name: missing-configmap  # ConfigMap doesn't exist
+                  name: missing-configmap
                   key: mode
           volumeMounts:
             - name: html
