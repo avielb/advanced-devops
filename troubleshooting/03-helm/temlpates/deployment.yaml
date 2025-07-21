@@ -17,4 +17,4 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ quote .Values.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.service.port | quote }}
+            - containerPort: {{ .Values.service.port }}
