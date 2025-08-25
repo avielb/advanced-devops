@@ -1,6 +1,6 @@
 docker run -d -p 80:80 nginx:alpine
-mkdir DevOps2402
-cd DevOps2402
+mkdir DevOps1808
+cd DevOps1808
 -----
 
 1.py
