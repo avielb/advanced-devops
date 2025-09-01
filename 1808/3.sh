@@ -1,5 +1,6 @@
 kubectl config use-context docker-desktop
 kubectl get pods
+kubectl get pods -n kube-system
 kubectl describe node docker-desktop
 kubectl run nginx --image=nginx:1.15.12-alpine
 kubectl describe pod nginx
