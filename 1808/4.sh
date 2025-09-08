@@ -23,3 +23,5 @@ kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/ma
 kubectl delete -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/statefulset.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/statefulset.yaml
 kubectl apply -f https://raw.githubusercontent.com/avielb/k8s-demo/refs/heads/master/volumes/daemonset.yaml
+
+kubectl scale sts/postgres --replicas=5
