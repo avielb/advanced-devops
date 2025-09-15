@@ -8,11 +8,11 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String((kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}')))
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
-create new repo called: 2402-argocd
+create new repo called: 1808-argocd
 https://github.com/new
 add this: 
-https://github.com/avielb/2402-argocd/blob/main/example.yaml
-https://github.com/avielb/2402-argocd/blob/main/svc.yaml
+https://github.com/avielb/1808-argocd/blob/main/example.yaml
+https://github.com/avielb/1808-argocd/blob/main/svc.yaml
 
 https://github.com/avielb/advanced-devops.git
 ./gitops/argocd/mychart
@@ -41,7 +41,7 @@ spec:
 
 
 
-https://github.com/avielb/2402-argocd/tree/main
+https://github.com/avielb/1808-argocd/tree/main
 
 https://app.docker.com/settings/personal-access-tokens/create - Read, Write, Delete
 
@@ -56,7 +56,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/avielb/2402-argocd.git
+    repoURL: https://github.com/avielb/1808-argocd.git
     path: mychart
     targetRevision: HEAD
     helm:
