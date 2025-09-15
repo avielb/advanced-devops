@@ -64,8 +64,8 @@ move docker-compose.yaml.txt docker-compose.yaml
 https://hub.docker.com/
 
 docker compose up -d
-docker tag myimage avielb/myimage-2402:v0.1
-docker push avielb/myimage-2402:v0.1
+docker tag myimage avielb/myimage-1808:v0.1
+docker push avielb/myimage-1808:v0.1
 
 
 # Stage 1: Build
