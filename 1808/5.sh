@@ -55,3 +55,8 @@ dependencies:
   - name: redis
     version: 20.11.4
     repository: oci://registry-1.docker.io/bitnamicharts
+
+
+
+
+helm upgrade -i redis oci://registry-1.docker.io/bitnamicharts/redis
