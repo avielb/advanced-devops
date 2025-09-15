@@ -1,5 +1,5 @@
 # test
-new pycharm project called DevOps2402 
+new pycharm project called DevOps1808 
 right click on the project and "Open In" , "Terminal"
 in the terminal:
 kubectl get pods 
