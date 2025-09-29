@@ -9,3 +9,4 @@ protocol=https
 
 https://github.com/new - 2402-first-repo
 https://github.com/settings/tokens/new
+git commit -am "init commit"
