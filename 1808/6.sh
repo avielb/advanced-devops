@@ -12,3 +12,4 @@ protocol=https
 https://github.com/new - 1808-first-repo
 https://github.com/settings/tokens/new
 
+git push -u origin main
