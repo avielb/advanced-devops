@@ -1,0 +1,22 @@
+name: Manual Trigger Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment environment"
+        required: true
+        default: "staging"
+      debug_mode:
+        description: "Enable debug logging"
+        required: false
+        default: "false"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show input values
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Debug mode: ${{ github.event.inputs.debug_mode }}"
