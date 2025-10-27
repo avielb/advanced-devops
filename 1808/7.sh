@@ -125,3 +125,7 @@ https://github.com/avielb/advanced-devops/blob/master/.github/workflows/call-reu
 
 
 https://app.docker.com/accounts/avielb/settings/personal-access-tokens/create
+
+
+DOCKERHUB_USERNAME
+DOCKERHUB_TOKEN
