@@ -9,21 +9,20 @@ on:
   push:
     branches:
         - main
-    pull_request:
-      branches:
-        - main
+        - master
   workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    container: python:3.11
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: show files
         run: |
           ls -ltr
+          python --version
 
 ----
 https://github.com/avielb/advanced-devops/blob/master/.github/workflows/seq-and-para.yaml
