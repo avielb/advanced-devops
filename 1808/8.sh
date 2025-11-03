@@ -70,3 +70,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+https://github.com/avielb/advanced-devops/blob/master/.github/workflows/docker-build.yaml
