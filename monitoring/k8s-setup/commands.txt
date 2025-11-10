@@ -14,7 +14,7 @@
 11. kubectl -n monitoring port-forward svc/prometheus-prometheus-pushgateway 9091:9091
 12. kubectl -n monitoring port-forward svc/prometheus-server 9090:80 
 13: echo "some_metric 52" | curl --data-binary @- http://localhost:9091/metrics/job/some_job/a/b
-14. helm install my-release oci://registry-1.docker.io/bitnamicharts/redis --set metrics.enabled=true
+14. helm install redis-mon oci://registry-1.docker.io/bitnamicharts/redis --set metrics.enabled=true
 15. kubectl port-forward svc/my-release-redis-metrics 9121:9121
 16. kubectl -n monitoring port-forward svc/prometheus-alertmanager 9093:9093
 17. kubectl -n monitoring port-forward svc/prometheus-prometheus-pushgateway 9091:9091
