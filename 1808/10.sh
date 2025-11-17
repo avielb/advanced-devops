@@ -6,9 +6,9 @@ sudo -i
 yum install docker -y
 systemctl enable docker
 systemctl start docker
-docker run -d -p 80:80 nginx:alpine
+docker run -d -p 80:80 --name aviel nginx:alpine
 http://calculator.aws/
-docker rm -vf container-name
+docker rm -vf aviel
 https://k3s.io/
 ------------------------------------
 curl -sfL https://get.k3s.io | sh - 
