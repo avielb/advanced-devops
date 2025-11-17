@@ -34,3 +34,7 @@ resource "aws_instance" "example" {
     Name = "ExampleInstance"
   }
 }
+
+output "ip" {
+  value = aws_instance.example.public_ip
+}
