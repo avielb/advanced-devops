@@ -201,3 +201,9 @@ provider "aws" {
 resource "aws_s3_bucket" "mybucket" {
   bucket = "my-local-bucket"
 }
+
+variable "vpc_name" {}
+variable "vpc_cidr" {}
+data aws_availability_zones "available" {}
+variable "private_subnets" {}
+variable "public_subnets" {}
