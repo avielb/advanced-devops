@@ -1,18 +1,35 @@
-# create folder in the pycharm project called "class11"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.81.0"
+    }
+  }
+}
 provider "aws" {
   region = "us-east-1"
 }
 
 resource "null_resource" "example" {}
+resource "null_resource" "example1" {}
 
 variable "server_name" {
   type = string
   default = "moshe"
   description = "the name of the server"
 }
-
 output "name" {
-  value = var.server_name
+  value = "server name is: ${var.server_name} "
+}
+
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state-bucket"
+    key            = "envs/dev/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
 }
 ----------------------------------------------
 variable "server_name" {
