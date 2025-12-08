@@ -1,4 +1,55 @@
 import json
+import boto3
+
+# Initialize the SQS client
+sqs = boto3.client('sqs')
+
+def lambda_handler(event, context):
+    # Loop through the received messages
+    for record in event['Records']:
+        # Extract the message body
+        message_body = record['body']
+        receipt_handle = record['receiptHandle']
+        
+        # Process the message (for example, print the message)
+        print(f"Received message: {message_body}")
+        
+        # Delete the message from the queue
+        try:
+            sqs.delete_message(
+                QueueUrl='<YOUR_SQS_QUEUE_URL>',  # Replace with your SQS Queue URL
+                ReceiptHandle=receipt_handle
+            )
+            print(f"Deleted message with receipt handle: {receipt_handle}")
+        except Exception as e:
+            print(f"Error deleting message: {str(e)}")
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Messages processed and deleted successfully')
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import json
 import os
 
 def lambda_handler(event, context):
