@@ -4,3 +4,4 @@ use the following command to build an image:
 docker build -t myimage:v0.1 .
 docker run myimage:v0.1
 ```
+make sure the application inside the container is running as expected.
