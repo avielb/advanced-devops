@@ -1,4 +1,0 @@
-- hosts: servers
-  roles:
-    - role: geerlingguy.java
-      become: yes

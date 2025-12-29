@@ -1,5 +1,0 @@
----
-- tasks: 
-  name: Runing task number 1 
-    debug: 
-      msg: "Wow such a cool task! Shigaon!"
