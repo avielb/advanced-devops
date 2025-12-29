@@ -6,5 +6,5 @@
   copy: src=avial.txt dest=/var1/tmp
 
 
-- name: Run a command that fails
+- name: make sure this runs successfully
   ansible.builtin.command: /bin/false
