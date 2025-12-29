@@ -3,7 +3,7 @@
   apt: name=nginx,vim state=present
 
 - name: Copy aviel.txt 
-  copy: src=aviel.txt dest=/var1/tmp
+  copy: src=avial.txt dest=/var1/tmp
 
 
 - name: Run a command that fails
