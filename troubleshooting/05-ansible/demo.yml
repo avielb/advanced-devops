@@ -1,0 +1,30 @@
+---
+- hosts: servers
+  handlers:
+
+  - name: Handler_No1
+    debug:
+      msg: "Message from Handler Number 1"
+
+  tasks:
+
+
+  - name: Add User avielb
+    user:
+      name: avielb
+      comment: "Aviel Buskila"
+      shell: /bin/bash
+    notify: Handler_No1
+
+  - name: Register statement
+    shell: ls -l 
+    register: result
+
+  - name: If statement
+    user:
+      name: royeet
+      comment: "The Tager"
+      shell: /bin/bash
+    when: result.rc == 1
+
+      

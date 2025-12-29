@@ -1,0 +1,23 @@
+# Ad-Hoc Commands
+ansible servers -m ping
+ansible servers -a "echo Hello World!"
+ansible servers -m apt -a "name=nginx state=present"
+
+# Hosts Inventory
+cat /etc/ansible/hosts
+
+# Variables, Tags.
+ansible-playbook vars.yml --tags=tag1
+
+# Handlers, Variable register, If statement, Module, Tasks.
+ansible-playbook demo.yml
+
+# Roles and Tasks
+ansible-playbook common.yml
+
+# Templates.
+ansible-playbook template.yml
+
+# Ansible Galaxy
+ansible-galaxy install geerlingguy.java
+ansible-playbook -i hosts -u root galaxy-role.yml

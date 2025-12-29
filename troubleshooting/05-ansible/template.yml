@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  serial: 1
+  tasks:
+
+  - name: Template a file to another place
+    template:
+        src: aviel_hostname.j2
+        dest: /root/hostname.conf

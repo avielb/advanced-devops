@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  ansible:
+    command: ["sleep", "100000"]
+    image: "avielb/ansible-manager:latest"
+    volumes:
+      - ./:/ansible/playbooks
+  node1:
+    image: "avielb/ansible-demo"
+  node2:
+    image: "avielb/ansible-demo"

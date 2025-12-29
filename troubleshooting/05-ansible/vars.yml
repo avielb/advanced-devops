@@ -1,0 +1,30 @@
+---
+- hosts: servers
+
+  vars:
+  - var1: "Aviel"
+  - var2: "Buskila"
+  - listVar:
+    - "Item4"
+    - "Item3"
+    - "Item2"
+    - "Item1"
+  vars_files:
+      - ./vars_file.yml
+
+  tasks:
+    - name: Print Vars from file.
+      debug:
+        msg: "{{varFromFile3}}"
+      tags: tag1
+
+    - name: Print Var1 and Var2
+      debug:
+        msg: "Var1 value is {{var1}} and Var2 value is {{var2}}"
+      tags: tag1
+
+    - name: Print listVar
+      debug:
+        msg: "Current Item is: {{item}}"
+      with_items: "{{listVar}}"
+      tags: tag2
