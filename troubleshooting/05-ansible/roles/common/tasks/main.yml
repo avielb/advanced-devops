@@ -5,9 +5,6 @@
 - name: Copy aviel.txt 
   copy: src=aviel.txt dest=/var1/tmp
 
-- name: demo
-  fail:
-    msg: "Intentional failure: this task is designed to fail for troubleshooting practice"
 
 - name: Run a command that fails
   ansible.builtin.command: /bin/false

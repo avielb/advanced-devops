@@ -1,0 +1,4 @@
+---
+- name: demo
+  fail:
+    msg: "Intentional failure: this task is designed to fail for troubleshooting practice"
