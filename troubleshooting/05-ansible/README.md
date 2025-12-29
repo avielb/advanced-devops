@@ -1,3 +1,5 @@
+# Ansible
+Before this session, open a terminal in the `05-ansible` folder and run the following commands to start the Docker containers and set up SSH keys for passwordless authentication:
 ```aiignore
 docker compose up -d
 docker exec -it ansible-demo-ansible-1 bash
